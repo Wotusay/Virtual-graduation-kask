@@ -7,12 +7,12 @@ class ProjectService{
     }
 
     getProject = async projectId => {
+        // Getting them out of the firestore with the given id
          const item = await this.db
           .collection("projects")
           .doc(projectId)
           .withConverter(projectConverter)
           .get();
-
           return item.data();
       };
 }
