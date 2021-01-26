@@ -1,5 +1,23 @@
 @import "./styles/reset.css";
 
+@font-face {
+  font-family: 'Monument Extended';
+  src: local('Monument Extended'), url(./fonts/MonumentExtended-Ultrabold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Mier A';
+  src: local('Mier A'), url(./fonts/MierA-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: local('Monument Extended'), url(./fonts/MonumentExtended-Regular.ttf) format('truetype');
+  font-weight: normal;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -14,4 +32,8 @@ html {
 /* stylelint-enable */
 body {
   background-color: #211F1F;
+}
+
+.hidden {
+  display: none;
 }

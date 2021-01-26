@@ -9,7 +9,9 @@ import Tour from "./components/tour/tour";
 
 const App = () => {
   return  useObserver(() =>
+
     <>
+     <h1 className={'hidden'}> Graduation Expo - Kask </h1>
       <Nav></Nav>
       <Switch>
         <Route exact path={ROUTES.input}>
