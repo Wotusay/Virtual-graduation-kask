@@ -1,5 +1,5 @@
 import { v4 } from "uuid";
-import { decorate, observable, action, computed } from "mobx";
+import { decorate, observable } from "mobx";
 
 class Project {
     constructor({ id= v4() , name, store, description, pictures = [], likes, url, students = [], tag = [] }) {

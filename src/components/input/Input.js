@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useStores } from "./hooks";
+import { useStores } from "../../hooks";
 import { useObserver } from "mobx-react-lite";
 
 

@@ -4,13 +4,16 @@ import { OrbitControls, Html } from '@react-three/drei';
 import Model from '../islands/Tour_island/islandOne.js';
 import styles from './tour.module.css';
 import Button from '../uiElements/Button/index.js';
+import { ROUTES } from '../../consts/index.js';
+import Nav from '../nav/nav.js';
 
 const Tour = () => {
     return (
         <>
+        <Nav></Nav>
         <h2 className={styles.title}>The <span>Tour</span> 2021</h2>
 
-        <Button text={'Ontdek'}></Button>
+        <Button text={'Ontdek'} pathDefiner={ROUTES.input}></Button>
 
         <Canvas shadowMap style={{width: 'auto' , height: 1000, zIndex:1}} camera={{position: [-2 , 2 , 3]}}>
             <ambientLight intensity={0.4} />

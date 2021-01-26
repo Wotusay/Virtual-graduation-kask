@@ -1,12 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './button.module.css';
 
-const Button = ({text}) => {
+const Button = ({text, pathDefiner}) => {
+    const history = useHistory();
+
+    const clickEvent = e => {
+        history.push(pathDefiner);
+    }
 
     return (
         <>
             <div className={styles.button__wrapper}>
-            <button className={styles.discover}> {text}</button></div>
+            <button onClick={(e) => clickEvent(e)} className={styles.discover}> {text}</button></div>
         </>
      )
 
