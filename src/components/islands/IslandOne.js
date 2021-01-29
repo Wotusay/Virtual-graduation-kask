@@ -8,7 +8,7 @@ import { useAnimations } from '@react-three/drei/useAnimations'
 export default function IslandOne(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/isladn1.glb')
-  const { actions,ref,names } = useAnimations(animations, group);
+  const { actions,names } = useAnimations(animations, group);
   useEffect(() => {
     actions[names[1]].play();
     actions[names[0]].play();
