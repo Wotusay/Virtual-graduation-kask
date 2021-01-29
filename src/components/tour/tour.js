@@ -1,7 +1,7 @@
 import React,{Suspense} from 'react';
 import {Canvas} from 'react-three-fiber';
 import { OrbitControls, Html } from '@react-three/drei';
-import Model from '../islands/Tour_island/islandOne.js';
+import IslandOne from '../islands/Tour_island/IslandOne.js';
 import styles from './tour.module.css';
 import Button from '../uiElements/Button/index.js';
 import { ROUTES } from '../../consts/index.js';
@@ -21,7 +21,7 @@ const Tour = () => {
             <directionalLight intensity={0.8} position={[5, -5, -5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />
             <OrbitControls enablePan={false} enableZoom={false} autoRotate={true} autoRotateSpeed={0.5}  />
             <Suspense fallback={<Html> loading ... </Html>}>
-                <Model position={[0, -0.2,0]} scale={[0.75, 0.75, 0.75]}></Model>
+                <IslandOne position={[0, -0.2,0]} scale={[0.75, 0.75, 0.75]}></IslandOne>
             </Suspense>
         </Canvas>
 
