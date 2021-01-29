@@ -5,4 +5,12 @@ const ROUTES = {
     likes: "/likes",
 }
 
-export {ROUTES};
+
+const CAMERA = { 
+    begin:[],
+    tour:[-2 , 2 , 3],
+    favourites:[],
+    students:[],
+}
+
+export {ROUTES, CAMERA};
