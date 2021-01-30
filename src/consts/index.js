@@ -1,8 +1,8 @@
 const ROUTES = {
     home: "/",
-    tour: "/tour",
-    input: "/input",
-    likes: "/likes",
+    tour:  { path: "/tour/:id", to: "/tour/" },
+    likes: { path: "/likes/:id", to: "/likes/" },
+    tourInput: "/tour/input",
 }
 
 

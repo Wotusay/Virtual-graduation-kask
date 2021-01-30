@@ -1,0 +1,48 @@
+.titleBegin{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    font-size: 4.5rem;
+    left: 0;
+    right: 0;
+    top: 15rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    font-family:'Monument Extended';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.begin {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: #F6C545;
+}
+
+
+.discover {
+    background-color: #37AD5D;
+    color: white;
+    text-transform: lowercase;
+    border-radius: 2rem;
+    padding: 1.7rem;
+    padding-left: 9.4rem ;
+    padding-right:9.4rem ;
+    border: none;
+
+    font-family: 'Mier A';
+    font-weight: 800;
+    font-size: 3rem;
+
+    z-index: 2;
+}
+
+.button__wrapper{
+    position: absolute;
+    display: flex;
+    bottom: 5rem;
+    margin-left: 37.5%; 
+    justify-content: center;
+}

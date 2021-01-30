@@ -30,9 +30,6 @@ const LandingPage = () => {
         positionIslandFour: clickOne  || clickTwo  ?  [2,-0.2, -500.1] : [2, -0.2, -3.1],
     });
 
-
-
-
     const hoverItemOneIn = (e) => {
         // Here we get the hover input from the first item
         setHoverOne(true)
@@ -70,7 +67,10 @@ const LandingPage = () => {
         if (clickTwo) {
             setClickTwo(false);
         }
-    }
+    };
+
+    
+
 
 
     return  ( 
@@ -84,6 +84,7 @@ const LandingPage = () => {
             <Suspense fallback={<Html> 
                     <Loading></Loading>
                  </Html>}>
+
 
                 <animated.group position={[0.5,0,1.6]}>
 
@@ -107,6 +108,7 @@ const LandingPage = () => {
                 </animated.group>
 
                 </animated.group>
+
                 
             </Suspense>
         </Canvas>

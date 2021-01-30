@@ -10,7 +10,7 @@ const Tour = () => {
     return (
         <>
         <h2 className={styles.titleTour}>The <span className={styles.tour}>Tour</span> 2021</h2>
-        <Button text={'Discover'} pathDefiner={ROUTES.input}></Button>
+        <Button text={'Discover'} pathDefiner={ROUTES.tour.to}></Button>
         </>
      )
 }
