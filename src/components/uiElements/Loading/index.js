@@ -2,6 +2,10 @@ import React, { PureComponent } from 'react';
 import {Spring} from 'react-spring/renderprops'
 
 const Loading = () => {
+
+  // If the 3D model is not loaded this will  be displayed
+  // It has a little simple animation
+
      const style = ({ props }) => ({
         border: "10px solid white",
         borderRadius: "100%",

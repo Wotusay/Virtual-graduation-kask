@@ -15,10 +15,10 @@ import HoverItem from '../uiElements/HoverItem/index.js';
 const LandingPage = () => {
     const [hoverOne, setHoverOne ] = useState(false);
     const [hoverTwo, setHoverTwo ] = useState(false);
-    const [removeRotate,setRemoveRotate] = useState(false);
     const [hoverItem, setHoverdItem] = useState('');
     
     const scaleAnimationOne = useSpring({
+        // Scale animation for the islands
         scale: hoverOne ? [1.05,1.05,1.05] : [1, 1, 1]
     });
 
@@ -27,23 +27,25 @@ const LandingPage = () => {
     });
 
 
-    const hoverItemOneIn = () => {
+    const hoverItemOneIn = (e) => {
+        // Here we get the hover input from the first item
         setHoverOne(true)
         setHoverdItem('The Tour');
     };
 
-    const hoverItemOneOut = () => {
+    const hoverItemOneOut = (e) => {
+        // Here we  get the input when we got out of the hover
         setHoverOne(false)
         setHoverdItem('');
     };
 
-    const hoverItemTwoIn = () => {
+    const hoverItemTwoIn = (e) => {
         setHoverTwo(true)
         setHoverdItem('Your Favourites');
 
     };
 
-    const hoverItemTwoOut = () => {
+    const hoverItemTwoOut = (e) => {
         setHoverTwo(false)
         setHoverdItem('');
 
@@ -54,7 +56,7 @@ const LandingPage = () => {
         <h2 className={styles.title}>The Virtual <span>Graduation</span> </h2>
         <HoverItem name={hoverItem}></HoverItem>
         <Rotate clicked={removeRotate} ></Rotate>
-        <Canvas onClick={(e) => setRemoveRotate(true)} shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1 , 6.5 ,1], fov:100}}>
+        <Canvas shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1 , 6.5 ,1], fov:100}}>
             <ambientLight intensity={0.4} />
             <directionalLight intensity={0.8} position={[-5, 5, 5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />
             <directionalLight intensity={0.8} position={[5, -5, -5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />

@@ -6,6 +6,7 @@ import { ROUTES } from '../../consts/index.js';
 
 
 const Tour = () => {
+    // UI Elements for the tour 
     return (
         <>
         <h2 className={styles.title}>The <span>Tour</span> 2021</h2>

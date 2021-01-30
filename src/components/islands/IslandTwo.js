@@ -4,6 +4,7 @@ import { useGLTF } from '@react-three/drei/useGLTF'
 import { useAnimations } from '@react-three/drei/useAnimations'
 
 export default function IslandTwo(props) {
+  // This the Second island know as the favourites
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('../assets/models/island2.glb')
   const { actions,names } = useAnimations(animations, group);

@@ -1,18 +1,10 @@
 import React from 'react';
 import styles from './rotate.module.css'
-import {animated,useSpring} from 'react-spring'
-import { useObserver } from 'mobx-react-lite';
 
-
-const Rotate = ({clicked}) => {
-
-    const opacityAnimationRotate = useSpring({
-        opacity: 0, from:{opacity: 1}
-    });
-
-
+const Rotate = ({}) => {
+    // Indication on how to rotate the item
     return ( 
-    <animated.div style={clicked ? opacityAnimationRotate : {opacity:1} } className={styles.rotate__wrapper}>
+    <div className={styles.rotate__wrapper}>
     <svg className={styles.rotated}  width="209" height="41.5" viewBox="0 0 340 68" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="53.3878" cy="30.4496" r="11.3572" fill="#C4C4C4"/>
         <circle cx="120.816" cy="43.388" r="11.3572" fill="#F6C545"/>
@@ -29,7 +21,7 @@ const Rotate = ({clicked}) => {
         <circle cx="170.222" cy="41.8068" r="26.0486" fill="white"/>
     </svg> 
     <p className={styles.rotateInfo}>Click to rotate</p>
-    </animated.div>
+    </div>
     )
 }
 
