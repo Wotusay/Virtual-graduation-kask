@@ -30,7 +30,7 @@ const LandingPage = () => {
     const hoverItemOneIn = (e) => {
         // Here we get the hover input from the first item
         setHoverOne(true)
-        setHoverdItem('The Tour');
+        setHoverdItem('The Gradution Tour');
     };
 
     const hoverItemOneOut = (e) => {
@@ -41,7 +41,7 @@ const LandingPage = () => {
 
     const hoverItemTwoIn = (e) => {
         setHoverTwo(true)
-        setHoverdItem('Your Favourites');
+        setHoverdItem('Favourites');
 
     };
 
@@ -55,8 +55,8 @@ const LandingPage = () => {
         <>
         <h2 className={styles.title}>The Virtual <span>Graduation</span> </h2>
         <HoverItem name={hoverItem}></HoverItem>
-        <Rotate clicked={removeRotate} ></Rotate>
-        <Canvas shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1 , 6.5 ,1], fov:100}}>
+        <Rotate></Rotate>
+        <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1 , 6.5 ,1], fov:100}}>
             <ambientLight intensity={0.4} />
             <directionalLight intensity={0.8} position={[-5, 5, 5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />
             <directionalLight intensity={0.8} position={[5, -5, -5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />

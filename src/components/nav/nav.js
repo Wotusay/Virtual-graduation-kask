@@ -1,18 +1,82 @@
 import React from "react";
-
+import { slide as Menu } from 'react-burger-menu'
 import styles from "./nav.module.css";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../consts";
 
 const Nav = () => {
+    const button = {
+        bmBurgerButton: {
+          position: 'absolute',
+          width: '36px',
+          height: '30px',
+          right: '46px',
+          top: '56px'
+        },
+        bmBurgerBars: {
+          background: 'white'
+        },
+
+        bmCrossButton: {
+          height: 'auto',
+          width: '13.4rem',
+          position: 'absolute',
+          righ:'none',
+          top: '20px' ,
+          left:'40px'
+
+        },
+        bmCross: {
+          background: 'none'
+        },
+        bmMenuWrap: {
+          position: 'fixed',
+          height: '100%'
+        },
+        bmMenu: {
+          background: '#F6C545',
+          padding: '2.5em 1.5em 0',
+          fontSize: '1.15em'
+        },
+        bmMorphShape: {
+          fill: '#373a47'
+        },
+        bmItemList: {
+          color: '#b8b7ad',
+          padding: '0.8em', 
+        },
+        bmItem: {
+          display: 'grid',
+          outline: 'none',
+          marginBottom:'5rem'
+        },
+        bmOverlay: {
+          background: 'rgba(0, 0, 0, 0.3)'
+        }
+      }
+      
     return (
         <>
+            <Menu customCrossIcon={<img alt='Close menu' src="../assets/images/svgs/closeMenu.svg" ></img>} styles={button} right>
+                <div className={styles.firstItem} >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.tour}> <p className={styles.navText}> The Graduation Tour </p></Link></div>
+                <div >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.likes}> <p className={styles.navText} >Favourites </p> </Link>
+                </div>
+
+                <div >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Festival </p> </Link>
+                </div>
+                <div >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Agenda </p> </Link>
+                </div>
+
+                <div >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Opleidingen </p> </Link>
+                </div>
+
+            </Menu>
             <img width="265.48" className={styles.logo} alt="Logo KASK" src="../assets/images/logo.png" />
-
-            <svg className={styles.menu} width="43" height="25" viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.943115 0.566284H79.1333V8.75151H0.943115V0.566284Z" fill="white"/>
-            <path d="M13.6133 19.1479H79.1333V27.3332H13.6133V19.1479Z" fill="white"/>
-            <path d="M28.9614 37.7296H79.1335V45.9148H28.9614V37.7296Z" fill="white"/>
-            </svg>
-
         </>
     )
 }

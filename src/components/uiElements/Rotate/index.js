@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './rotate.module.css'
 
-const Rotate = ({}) => {
+const Rotate = () => {
     // Indication on how to rotate the item
     return ( 
     <div className={styles.rotate__wrapper}>
