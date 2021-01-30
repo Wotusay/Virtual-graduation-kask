@@ -1,0 +1,13 @@
+.hoverItem {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-family: 'Mier A';
+    font-weight: 800;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    width: 40rem;
+    left: -10rem;
+    text-align: center;
+}
