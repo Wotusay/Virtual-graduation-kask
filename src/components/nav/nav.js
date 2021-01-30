@@ -61,7 +61,7 @@ const Nav = () => {
                 <div className={styles.firstItem} >
                 <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.tour}> <p className={styles.navText}> The Graduation Tour </p></Link></div>
                 <div >
-                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.likes}> <p className={styles.navText} >Favourites </p> </Link>
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.likes}> <p className={styles.navText} >Your Favourites </p> </Link>
                 </div>
 
                 <div >
@@ -72,7 +72,7 @@ const Nav = () => {
                 </div>
 
                 <div >
-                <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Opleidingen </p> </Link>
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Institutions </p> </Link>
                 </div>
 
             </Menu>

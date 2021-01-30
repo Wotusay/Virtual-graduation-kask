@@ -1,6 +1,6 @@
 .discover {
     background-color: #37AD5D;
-    color: #211F1F;
+    color: white;
     text-transform: lowercase;
     border-radius: 2rem;
     padding: 1.7rem;
@@ -18,7 +18,7 @@
 .button__wrapper{
     position: absolute;
     display: flex;
-    bottom: 2rem;
+    bottom: 5rem;
     margin-left: 42.5%;
     justify-content: center;
 }

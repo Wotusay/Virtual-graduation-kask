@@ -1,11 +1,11 @@
-.titleFirst {
+.titleTour{
     position: absolute;
     display: flex;
     justify-content: center;
     z-index: 2;
     font-size: 4.5rem;
-    left: 42.5rem;
-    right: 43.5rem;
+    left: 45.5rem;
+    right: 45.5rem;
     top: 15rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -13,10 +13,10 @@
     font-family:'Monument Extended';
     font-style: normal;
     font-weight: normal;
-    width: 90rem;
 }
 
-.graduation {
-    padding-left: 1rem;
+.tour {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     color: #F6C545;
 }

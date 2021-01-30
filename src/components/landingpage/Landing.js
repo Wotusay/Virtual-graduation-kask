@@ -1,36 +1,42 @@
 import React, {Suspense, useState} from 'react';
-import {Canvas} from 'react-three-fiber';
-import { OrbitControls, Html } from '@react-three/drei';
+import { Canvas } from 'react-three-fiber';
+import { Html } from '@react-three/drei';
 import IslandOne from '../islands/IslandOne.js';
 import IslandTwo from '../islands/IslandTwo.js';
 import IslandThree from '../islands/IslandThree.js';
 import IslandFour from '../islands/IslandFour.js';
 import {useSpring, animated} from 'react-spring-three';
-import styles from './Landing.module.css'
-import Rotate from '../uiElements/Rotate/index.js';
 import Loading from '../uiElements/Loading/index.js';
-import HoverItem from '../uiElements/HoverItem/index.js';
+import Tour from '../uiElements/TourUI/tour'
+import LandingUI from '../uiElements/LandingUI/index.js';
+import ThreeBasicsItems from '../uiElements/ThreeBasicsItems/index.js';
+import Favourite from '../uiElements/FavouritesUI/index.js';
 
  
 const LandingPage = () => {
     const [hoverOne, setHoverOne ] = useState(false);
     const [hoverTwo, setHoverTwo ] = useState(false);
+    const [clickOne, setClickOne] = useState(false);
+    const [clickTwo, setClickTwo] = useState(false);
     const [hoverItem, setHoverdItem] = useState('');
-    
     const scaleAnimationOne = useSpring({
-        // Scale animation for the islands
-        scale: hoverOne ? [1.05,1.05,1.05] : [1, 1, 1]
+        // Scale animation for the islands 
+        // And Click animations 
+        scale: hoverOne && !clickOne  ? [1.05,1.05,1.05] : clickOne ? [1.2,1.2,1.2] : [1, 1, 1],
+        position: clickOne ? [-1,0,-2] : clickTwo ? [0.5,0.1,500] : [-3, -0.2,2],
+        positionIslandTwo: clickOne && !clickTwo ? [-500,-0.2, -3.5] : clickTwo && !clickOne ? [-1,0,-2] : [-3,-0.2, -2.5],
+        scaleTwo: hoverTwo && !clickTwo ? [1.05,1.05,1.05] : clickTwo ? [1.2,1.2,1.2] : [1, 1, 1],
+        positionIslandThree: clickOne || clickTwo  ? [500, -0.2, 2.5] : [1.8,-0.2,1.5] ,
+        positionIslandFour: clickOne  || clickTwo  ?  [2,-0.2, -500.1] : [2, -0.2, -3.1],
     });
 
-    const scaleAnimationTwo = useSpring({
-        scale: hoverTwo ? [1.05,1.05,1.05] : [1, 1, 1]
-    });
+
 
 
     const hoverItemOneIn = (e) => {
         // Here we get the hover input from the first item
         setHoverOne(true)
-        setHoverdItem('The Gradution Tour');
+        setHoverdItem('The Tour 2021');
     };
 
     const hoverItemOneOut = (e) => {
@@ -41,7 +47,7 @@ const LandingPage = () => {
 
     const hoverItemTwoIn = (e) => {
         setHoverTwo(true)
-        setHoverdItem('Favourites');
+        setHoverdItem('Your favourites');
 
     };
 
@@ -51,32 +57,57 @@ const LandingPage = () => {
 
     };
 
+    const handleClickOne = e  => {
+        setClickOne(true)
+        if (clickOne) {
+            setClickOne(false);
+        }
+    }
+
+
+    const handleClickTwo = e  => {
+        setClickTwo(true)
+        if (clickTwo) {
+            setClickTwo(false);
+        }
+    }
+
+
     return  ( 
         <>
-        <h2 className={styles.title}>The Virtual <span>Graduation</span> </h2>
-        <HoverItem name={hoverItem}></HoverItem>
-        <Rotate></Rotate>
-        <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1 , 6.5 ,1], fov:100}}>
-            <ambientLight intensity={0.4} />
-            <directionalLight intensity={0.8} position={[-5, 5, 5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />
-            <directionalLight intensity={0.8} position={[5, -5, -5]} castShadow shadow-mapSize-width={2024} shadow-mapSize-height={2024} />
-            <OrbitControls enablePan={false} enableZoom={false} autoRotate={true} autoRotateSpeed={0.2}  />
+
+        {clickOne ? <Tour></Tour> : 
+        clickTwo ? <Favourite></Favourite> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
+
+        <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
+            <ThreeBasicsItems></ThreeBasicsItems>
             <Suspense fallback={<Html> 
                     <Loading></Loading>
                  </Html>}>
-                <group position={[0.5,0,1.6]}>
-                <animated.group scale={scaleAnimationOne.scale} >
-                <IslandOne onPointerOver={(e) => hoverItemOneIn(e)}
-                onPointerOut={(e) => hoverItemOneOut(e)} position={[-3, -0.2,2]} scale={[0.75, 0.75, 0.75]}></IslandOne></animated.group>
-                <animated.group scale={scaleAnimationTwo.scale} >
-                <IslandTwo onPointerOver={(e) => hoverItemTwoIn(e)}
-                onPointerOut={(e) => hoverItemTwoOut(e)} position={[-3,-0.2, -2.5]} scale={[0.75, 0.75, 0.75]}></IslandTwo>
+
+                <animated.group position={[0.5,0,1.6]}>
+
+                <animated.group scale={scaleAnimationOne.scale} position={scaleAnimationOne.position} >
+                <IslandOne onClick={(e) => handleClickOne(e) } onPointerOver={(e) => hoverItemOneIn(e)}
+                onPointerOut={(e) => hoverItemOneOut(e)} scale={[0.75, 0.75, 0.75]}></IslandOne>
                 </animated.group>
-                <IslandThree 
-                position={[1.8,-0.2,1.5]} scale={[0.75, 0.75, 0.75]} ></IslandThree>
+
+                <animated.group position={scaleAnimationOne.positionIslandTwo} scale={scaleAnimationOne.scaleTwo} >
+                <IslandTwo onClick={(e) => handleClickTwo(e)} onPointerOver={(e) => hoverItemTwoIn(e)}
+                onPointerOut={(e) => hoverItemTwoOut(e)} scale={[0.75, 0.75, 0.75]}></IslandTwo>
+                </animated.group>
+
+                <animated.group position={scaleAnimationOne.positionIslandThree}>
+                <IslandThree scale={[0.75, 0.75, 0.75]} ></IslandThree>
+                </animated.group>
+
+                <animated.group position={scaleAnimationOne.positionIslandFour}>
                 <IslandFour 
-                position={[2,-0.2,-3.1]} scale={[0.75, 0.75, 0.75]} ></IslandFour>
-                </group>
+                 scale={[0.75, 0.75, 0.75]} ></IslandFour>
+                </animated.group>
+
+                </animated.group>
+                
             </Suspense>
         </Canvas>
         </>
