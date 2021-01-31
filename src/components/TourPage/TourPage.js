@@ -6,7 +6,6 @@ import { v4 } from "uuid";
 const TourPage = () => {
 
     const [selection, setSelection] = useState([]);
-    const [error , setError] = useState('');
 
 
     const clickEvent = e => {
@@ -15,7 +14,6 @@ const TourPage = () => {
     }
 
     const checkBoxInput = e => {
-        console.log(e.target.checked);
         const inputState = e.target.checked;
         const inputValue = e.target.value;
 
@@ -35,15 +33,15 @@ const TourPage = () => {
             <div className={styles.input__wrapper}> 
                 {LABELS.map(label => (
                 <>
-                <input key={v4()} onChange={(e) => checkBoxInput(e) } className={styles.input} type="checkbox" id={label} name={label} value={label}> 
+                <input onChange={(e) => checkBoxInput(e) } className={styles.input} type="checkbox" id={label} name={label} value={label}> 
                 </input>
-                <label key={v4()} className={styles.input__label} htmlFor={label}>{label}</label>
+                <label className={styles.input__label} htmlFor={label}>{label}</label>
                 </>
                 ))}
             </div>
 
             <div className={styles.button__wrapper}>
-            <input type="submit" value="Discover your tour" onSubmit={(e) => clickEvent(e)} className={styles.discover}></input>
+            <input type="submit" value="Discover your tour" onClick={(e) => clickEvent(e)} className={styles.discover}></input>
             </div>    
             </form>
         </>
