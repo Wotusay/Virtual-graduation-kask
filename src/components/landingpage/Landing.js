@@ -68,18 +68,17 @@ const LandingPage = () => {
             setClickTwo(false);
         }
     };
-
     
-
-
-
+    // Instead of using onclick i use onpointerdown
+    // This is because on mobile there is no onclick and this doesnt support onTouch
+    // See line 91
     return  ( 
         <>
 
         {clickOne ? <Tour></Tour> : 
         clickTwo ? <Favourite></Favourite> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
 
-        <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
+        <Canvas style={{cursor:'pointer'}} id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
             <ThreeBasicsItems></ThreeBasicsItems>
             <Suspense fallback={<Html> 
                     <Loading></Loading>
@@ -89,12 +88,12 @@ const LandingPage = () => {
                 <animated.group position={[0.5,0,1.6]}>
 
                 <animated.group scale={scaleAnimationOne.scale} position={scaleAnimationOne.position} >
-                <IslandOne onClick={(e) => handleClickOne(e) } onPointerOver={(e) => hoverItemOneIn(e)}
+                <IslandOne onPointerDown={(e) => handleClickOne(e) } onPointerOver={(e) => hoverItemOneIn(e)}
                 onPointerOut={(e) => hoverItemOneOut(e)} scale={[0.75, 0.75, 0.75]}></IslandOne>
                 </animated.group>
 
                 <animated.group position={scaleAnimationOne.positionIslandTwo} scale={scaleAnimationOne.scaleTwo} >
-                <IslandTwo onClick={(e) => handleClickTwo(e)} onPointerOver={(e) => hoverItemTwoIn(e)}
+                <IslandTwo onPointerDown={(e) => handleClickTwo(e)} onPointerOver={(e) => hoverItemTwoIn(e)}
                 onPointerOut={(e) => hoverItemTwoOut(e)} scale={[0.75, 0.75, 0.75]}></IslandTwo>
                 </animated.group>
 

@@ -5,12 +5,12 @@ const ROUTES = {
     tourInput: "/tour/input",
 }
 
+const LABELS = [
+    'Animation',
+    'Muziek','Film',
+    'Interieur','Fotografie',
+    'Virtual reality',
+    'Mode','Storytelling'
+];
 
-const CAMERA = { 
-    begin:[],
-    tour:[-2 , 2 , 3],
-    favourites:[],
-    students:[],
-}
-
-export {ROUTES, CAMERA};
+export {ROUTES,LABELS };
