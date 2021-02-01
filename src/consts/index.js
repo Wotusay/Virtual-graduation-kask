@@ -7,10 +7,10 @@ const ROUTES = {
 
 const LABELS = [
     'Animation',
-    'Muziek','Film',
+    'Music','Film',
     'Interieur','Fotografie',
     'Virtual reality',
-    'Mode','Storytelling'
+    'Storytelling'
 ];
 
 export {ROUTES,LABELS };

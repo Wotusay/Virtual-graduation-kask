@@ -78,7 +78,7 @@ const LandingPage = () => {
         {clickOne ? <Tour></Tour> : 
         clickTwo ? <Favourite></Favourite> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
 
-        <Canvas style={{cursor:'pointer'}} id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
+        <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
             <ThreeBasicsItems></ThreeBasicsItems>
             <Suspense fallback={<Html> 
                     <Loading></Loading>
