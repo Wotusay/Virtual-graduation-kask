@@ -5,6 +5,7 @@ import { ROUTES } from "./consts";
 import Nav from "./components/uiElements/nav/nav";
 import LandingPage from "./components/LandingPage/Landing";
 import TourPage from "./components/TourPage/TourPage";
+import DetailPage from "./components/detailPage/DetailPage";
 
 
 
@@ -17,7 +18,10 @@ const App = () => {
       <Switch>
         <Route exact path={ROUTES.tour.to}>
           <TourPage></TourPage>
-        </Route>    
+        </Route>   
+        <Route exact path={ROUTES.detail}>
+            <DetailPage></DetailPage>
+        </Route> 
         <Route path={ROUTES.home}>
             <LandingPage></LandingPage>
         </Route>         

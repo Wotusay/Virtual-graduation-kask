@@ -81,6 +81,8 @@ const Nav = () => {
             <Link to={ROUTES.home}>
             <img width="265.48" className={styles.logo} alt="Logo KASK" src="../assets/images/logo.png" />
             </Link>
+
+            <div className={styles.background}> </div>
         </>
     )
 }

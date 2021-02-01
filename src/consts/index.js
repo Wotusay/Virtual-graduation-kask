@@ -2,7 +2,7 @@ const ROUTES = {
     home: "/",
     tour:  { path: "/tour/:id", to: "/tour/" },
     likes: { path: "/likes/:id", to: "/likes/" },
-    tourInput: "/tour/input",
+    detail: "/detail/"
 }
 
 const LABELS = [

@@ -1,0 +1,185 @@
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4.5rem;
+    margin-top: 18rem;
+    margin-bottom: 5.6rem;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    height: 44.6rem;  
+    overflow-x: scroll; 
+    overflow-y: hidden;
+    margin-left: 8rem;
+}
+
+.img {
+    padding-right: 10rem ;
+}
+
+.helpfull {
+    font-family: 'Mier A';
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #37AD5D;
+    font-size: 2.4rem;
+    display: flex;
+    margin-top: 4.1rem;
+    justify-content: center;
+}
+
+.helpfull::before {
+    content: url('/assets/images/svgs/LeftArrow.svg');
+    padding-right: 1rem;
+    display: inline;
+}
+
+.helpfull::after {
+    content: url('/assets/images/svgs/RightArrow.svg');
+    display: inline;
+    padding-left: 1rem;
+
+}
+
+.container {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.liking {
+    display: grid;
+    position: relative;
+    margin-left: 8rem;
+    margin-bottom: 8.8rem;
+}
+
+.textLiked {
+    font-family: 'Mier A';
+    font-weight: bold;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+.liked {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.disliked {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+}
+.imgLiked {
+    background-image: url('/assets/images/svgs/like.svg');
+    width: 10rem;
+    height: 10rem;
+    margin-left: 8rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+}
+
+.liked:checked + .imgLiked {
+    background-image: url('/assets/images/svgs/likedClicked.svg');
+
+}
+
+.liked__wrapperr {
+    margin-top: 2rem;
+}
+
+.imgDisLiked {
+    background-image: url('/assets/images/svgs/dislike.svg');
+    width: 10rem;
+    cursor: pointer;
+
+    height: 10rem;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.disliked:checked + .imgDisLiked {
+    background-image: url('/assets/images/svgs/dislikeClicked.svg');
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5.6rem;
+    margin-top:11rem;
+}
+
+.buttonYellow {
+    font-size: 3.5rem;
+    font-family:'Mier A';
+    font-weight: 800;
+
+
+    background-color: #F6C545;
+    color: #211F1F;
+    text-transform: lowercase;
+    border-radius: 2rem;
+    padding: 1.6rem;
+    padding-left: 3.7rem ;
+    padding-right:3.7rem ;
+    border: none;
+    margin-right: 48rem;
+
+}
+
+.buttonGreen {
+    font-size: 3.5rem;
+    font-family:'Mier A';
+    font-weight: 800;
+
+    background-color: #37AD5D;
+    color: white;
+    text-transform: lowercase;
+    border-radius: 2rem;
+    padding: 1.6rem;
+    padding-left: 3.7rem ;
+    padding-right:3.7rem ;
+    border: none;
+    margin-left: 48rem;
+}
+
+.progress {
+    margin-bottom: 5.6rem;
+    display: grid;
+    justify-content: center;
+}
+
+.progressText {
+    font-family: 'Mier A';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: #37AD5D;
+    margin-bottom: 1rem;
+}
+
+.progresBar {
+    display: grid
+}
+
+.bar1, .bar2 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.bar1 {
+    z-index: 2;
+}
+
+
