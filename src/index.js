@@ -7,6 +7,8 @@ import {BrowserRouter} from "react-router-dom";
 import './fonts/MonumentExtended-Ultrabold.ttf';
 import './fonts/MonumentExtended-Regular.ttf';
 import './fonts/MierA-Bold.ttf';
+import './fonts/MierA-Thin.ttf';
+import './fonts/MierA-Book.ttf';
 
 
 
