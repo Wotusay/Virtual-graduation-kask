@@ -1,0 +1,100 @@
+.info__wrapper {
+    display: grid;
+    color: #000000;
+}
+
+.info {    
+    background-color: white;
+    display: grid;
+    width: 100%;
+    padding-top: 4.2rem;
+    grid-gap: 5.6rem;
+}
+
+.infoTitle {
+    font-family: Monument Extended;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 5.9rem;
+    width: 84rem;
+}
+
+.madeBy {
+    font-family: 'Mier A';
+    font-weight: 300;
+    font-size: 2rem;
+    margin-top: 1.4rem;
+    width: 21.5rem;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    width: 74%;
+    font-family: 'Mier A';
+    font-style: normal;
+    font-size: 3rem;
+    font-weight: 400;
+
+}
+
+.titleWrapper {
+    display: grid;
+    justify-content: center;
+    margin-right: 40rem;
+
+}
+
+.descriptionWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5.6rem;
+}
+
+.links {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 6rem;
+}
+
+.link {
+    color: white;
+    font-family: 'Mier A';
+    font-weight: 800;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #37AD5D;
+    font-size: 3rem;
+    padding: 13rem;
+    padding-left: 7.3rem;
+    padding-right: 7.3rem;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    text-decoration: none;
+
+}
+
+.linkYellow {
+    color: black;
+    font-family: 'Mier A';
+    font-weight: 800;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F6C545;
+    font-size: 3rem;
+    padding: 13rem;
+    padding-left: 7.3rem;
+    padding-right: 7.3rem;
+    transition: all ease-in-out 300ms;
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.link:hover, .linkYellow:hover{
+    background-color: white;
+    color: black;
+}

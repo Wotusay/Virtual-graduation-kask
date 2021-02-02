@@ -1,0 +1,59 @@
+.liking {
+    display: grid;
+    position: relative;
+    margin-left: 8rem;
+    margin-bottom: 8.8rem;
+}
+
+.textLiked {
+    font-family: 'Mier A';
+    font-weight: bold;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+.liked {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+.disliked {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+}
+.imgLiked {
+    background-image: url('/assets/images/svgs/like.svg');
+    width: 10rem;
+    height: 10rem;
+    margin-left: 8rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    cursor: pointer;
+}
+
+.liked:checked + .imgLiked {
+    background-image: url('/assets/images/svgs/likedClicked.svg');
+
+}
+
+.liked__wrapperr {
+    margin-top: 2rem;
+}
+
+.imgDisLiked {
+    background-image: url('/assets/images/svgs/dislike.svg');
+    width: 10rem;
+    cursor: pointer;
+
+    height: 10rem;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.disliked:checked + .imgDisLiked {
+    background-image: url('/assets/images/svgs/dislikeClicked.svg');
+}
