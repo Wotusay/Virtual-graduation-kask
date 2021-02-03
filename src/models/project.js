@@ -2,7 +2,7 @@ import { v4 } from "uuid";
 import { decorate, observable } from "mobx";
 
 class Project {
-    constructor({ id= v4() , name, store, description, pictures = [], likes, url, students = [], tag = [] }) {
+    constructor({ id= v4() , name, store, description=[], pictures = [], likes, url, students = [], tag = [] }) {
         this.id = id;
         this.name = name;
         this.description = description;

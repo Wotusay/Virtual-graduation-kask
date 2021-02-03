@@ -3,6 +3,10 @@
     color: #000000;
 }
 
+.hide {
+    display: none;
+}
+
 .info {    
     background-color: white;
     display: grid;
@@ -28,13 +32,12 @@
 }
 
 .description {
-    display: flex;
-    justify-content: center;
-    width: 74%;
+    padding-bottom:1rem;
     font-family: 'Mier A';
     font-style: normal;
     font-size: 3rem;
     font-weight: 400;
+
 
 }
 
@@ -46,10 +49,12 @@
 }
 
 .descriptionWrapper {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-auto-columns: 77%;
     margin-bottom: 5.6rem;
+    justify-content: center;
 }
+
 
 .links {
     display: grid;

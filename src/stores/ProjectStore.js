@@ -67,7 +67,6 @@ class ProjectStore {
 
 
     getRandom = (arr, n) => {
-        this.randomTourProjects = [];
         if (n >= 4) {
             n = 4;
         };
@@ -93,11 +92,9 @@ class ProjectStore {
 
 }
 
-
-
-
 decorate(ProjectStore, {
     projects: observable,
+    randomTourProjects:observable,
     filterProjects: action,
     makeRandomProjectTour:action,
     getProjectsWithTags: action,

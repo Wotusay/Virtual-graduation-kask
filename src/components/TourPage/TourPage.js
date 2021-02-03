@@ -1,32 +1,35 @@
 import React, { useState } from 'react';
-import { LABELS } from '../../consts';
+import { LABELS, ROUTES } from '../../consts';
 import styles from './tourpage.module.css';
 import {useStores} from '../../hooks/index.js';
 import { useObserver } from 'mobx-react-lite';
+import { useHistory } from 'react-router-dom';
 
 
 const TourPage = () => {
 
     const [selection, setSelection] = useState([]);
     const { projectStore } =  useStores();
+    const history = useHistory();
 
-    const checkBoxInput = e => {
+    const checkBoxInput = async e => {
         const inputState = e.target.checked;
         const inputValue = e.target.value;
-        projectStore.getProjectsWithTags(selection);
         projectStore.emptyRandomProjects();
-
-
 
         if(inputState) {
             setSelection([...selection,inputValue]);
+            projectStore.getProjectsWithTags(selection);
+            return;
 
         }
 
         if(!inputState) {
             projectStore.emptyProjects();
             setSelection(selection.filter(select => select !== inputValue));
+            return;
         }
+
     }
 
     const handleSubmit = async (e) => {
@@ -35,17 +38,16 @@ const TourPage = () => {
         let n = selection.length;
 
         if (selection.length !== 1) {
-            const randomPicked = projectStore.getRandom(projects, n);
-            console.log(randomPicked);
-            let randoms = projectStore.randomTourProjects;
-
-            randoms.map(item => {
-               return alert(item.name)
-            })
-
-
+            try {
+                const randomPicked = projectStore.getRandom(projects, n);
+                console.log(randomPicked);
+                history.push(ROUTES.tourDetail.to + 0);
+            }
+            catch(error) {
+                projectStore.emptyProjects();
+                projectStore.emptyRandomProjects();
+            }
          }
-
     }
 
     return useObserver (() => (

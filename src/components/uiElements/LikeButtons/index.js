@@ -9,12 +9,12 @@ const LikeButtons = () => {
         <div className={styles.liked__wrapperr}>
 
             <input className={styles.disliked} name="like" id="disliked" value={false} type="radio" ></input>
-            <label  className={styles.imgDisLiked} for="disliked">
+            <label  className={styles.imgDisLiked} htmlFor="disliked">
     
             </label>
 
             <input className={styles.liked}  name="like" id="liked" value={true} type="radio" ></input>
-            <label className={styles.imgLiked} for="liked"> 
+            <label className={styles.imgLiked} htmlFor="liked"> 
             </label>
         </div>
     </div>

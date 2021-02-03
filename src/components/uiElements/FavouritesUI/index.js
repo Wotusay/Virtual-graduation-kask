@@ -10,7 +10,7 @@ const Favourite = () => {
     return (
         <>
         <h2 className={styles.titleFav}>Your <span className={styles.Fav}>Favourites</span></h2>
-        <Button text={'Go in!'} pathDefiner={ROUTES.input}></Button>
+        <Button text={'Go in!'} pathDefiner={ROUTES.likesDetail}></Button>
         </>
      )
 }

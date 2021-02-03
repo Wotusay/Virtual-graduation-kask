@@ -2,14 +2,13 @@ import { useObserver } from 'mobx-react-lite';
 import React from 'react';
 import styles from './picturelist.module.css'
 
-const PictureList = () => {
+const PictureList = ({project}) => {
     return useObserver (() => (
         <>
         <div className={styles.images} >
-        <img className={styles.img} alt="picture1" src="../assets/images/EllenDeVos/picture1.png" ></img> 
-        <img className={styles.img} alt="picture2" src="../assets/images/EllenDeVos/picture1.png" ></img> 
-        <img className={styles.img} alt="picture3" src="../assets/images/EllenDeVos/picture1.png" ></img> 
-        <img className={styles.img} alt="picture4" src="../assets/images/EllenDeVos/picture1.png" ></img> 
+            {project.pictures.map(pic => (
+            <img key={pic}  className={styles.img} alt={`${pic}`} src={`../assets/images/${pic}`} ></img> 
+            ))}
     </div>
      <p className={styles.helpfull} > SCROLL FOR MORE </p>
     </>

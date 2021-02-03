@@ -59,9 +59,9 @@ const Nav = () => {
         <>
             <Menu customCrossIcon={<img alt='Close menu' src="../assets/images/svgs/closeMenu.svg" ></img>} styles={button} right>
                 <div className={styles.firstItem} >
-                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.tour.to}> <p className={styles.navText}> The Graduation Tour </p></Link></div>
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.tour}> <p className={styles.navText}> The Graduation Tour </p></Link></div>
                 <div >
-                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.likes.to}> <p className={styles.navText} >Your Favourites </p> </Link>
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.likes}> <p className={styles.navText} >Your Favourites </p> </Link>
                 </div>
 
                 <div >
