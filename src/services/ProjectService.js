@@ -1,5 +1,5 @@
 import "firebase/firestore";
-import {projectConverter} from '../models/Project';
+import {projectConverter} from '../models/project';
 
 class ProjectService{ 
     constructor(firebase){
