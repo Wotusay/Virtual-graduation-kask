@@ -75,6 +75,10 @@ const Nav = () => {
                 <Link className={styles.menuItem} style={{ textDecoration: "none" }}> <p className={styles.navText} >Institutions </p> </Link>
                 </div>
 
+              
+                <div className={styles.logoNav}> 
+                    <img alt="logo nav" src="../assets/images/logoNav.png" width="250" />
+                 </div>
             </Menu>
 
 
