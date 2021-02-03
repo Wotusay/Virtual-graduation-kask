@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import { Canvas } from 'react-three-fiber';
 import { Html } from '@react-three/drei';
 import IslandOne from '../islands/IslandOne.js';
@@ -43,18 +43,21 @@ const LandingPage = () => {
     };
 
     const hoverItemTwoIn = (e) => {
+        // Here we get the hover input from the first item
         setHoverTwo(true)
         setHoverdItem('Your favourites');
 
     };
 
     const hoverItemTwoOut = (e) => {
+        // Here we  get the input when we got out of the hover
         setHoverTwo(false)
         setHoverdItem('');
 
     };
 
     const handleClickOne = e  => {
+        // Here we triggerr the animations by setting the clicked on true or revert the animation
         setClickOne(true)
         if (clickOne) {
             setClickOne(false);
@@ -63,11 +66,17 @@ const LandingPage = () => {
 
 
     const handleClickTwo = e  => {
+        // Here we triggerr the animations by setting the clicked on true or revert the animation
         setClickTwo(true)
         if (clickTwo) {
             setClickTwo(false);
         }
     };
+
+    useEffect(() => {
+        // To display the cursor as a pointer when hovering over an 3d object
+        document.body.style.cursor = hoverOne || hoverTwo ? 'pointer' : 'auto';
+    })
     
     // Instead of using onclick i use onpointerdown
     // This is because on mobile there is no onclick and this doesnt support onTouch

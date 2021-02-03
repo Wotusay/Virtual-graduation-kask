@@ -7,26 +7,33 @@ import { useHistory } from 'react-router-dom';
 
 
 const TourPage = () => {
-
+    // The full tour input page
     const [selection, setSelection] = useState([]);
     const { projectStore } =  useStores();
     const history = useHistory();
 
     const checkBoxInput = async e => {
+        // Checking the input of the checkbuttons 
         const inputState = e.target.checked;
         const inputValue = e.target.value;
+        // Emptying the randomprojects to avoid duplicates or more items then 4
         projectStore.emptyRandomProjects();
 
         if(inputState) {
+            // Setting the selection
             setSelection([...selection,inputValue]);
+            // Getting all the projects with the tags
             projectStore.getProjectsWithTags(selection);
             return;
 
         }
 
         if(!inputState) {
+            // Emptying the projects when u disable one and removing it from the selection
             projectStore.emptyProjects();
             setSelection(selection.filter(select => select !== inputValue));
+            // Then adding them back with the new selection that has been made
+            projectStore.getProjectsWithTags(selection);
             return;
         }
 
@@ -34,16 +41,19 @@ const TourPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // Checking the projects
         let projects = projectStore.projects;
         let n = selection.length;
 
         if (selection.length !== 1) {
+            // if the lenght is less then 1  the tour wont start
             try {
-                const randomPicked = projectStore.getRandom(projects, n);
-                console.log(randomPicked);
+                // Getting the random projects and pushing to the next page
+                projectStore.getRandom(projects, n);
                 history.push(ROUTES.tourDetail.to + 0);
             }
             catch(error) {
+                // If there is an error he will  empty the selctions and u have to do it agian
                 projectStore.emptyProjects();
                 projectStore.emptyRandomProjects();
             }

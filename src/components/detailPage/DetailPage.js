@@ -16,7 +16,9 @@ const DetailPage = () => {
     const history = useHistory();
     const projects = projectStore.randomTourProjects;
     const {id} = useParams();
+
     const hideDescription = () => {
+        // To  hide the description
         setDesriptionVisble(true);
         if (descriptionVisable) {
             setDesriptionVisble(false)
@@ -26,18 +28,21 @@ const DetailPage = () => {
 
     const nextProject = (e) => {
         let nextId = parseInt(id) + 1;
-        console.log(nextId)
 
         if (endOfTour) {
+            // If the tour has endee we go back to the likes
             history.push(ROUTES.tour);
             return;
         }
         else {
+            // When u click we parse the new id into the url 
             history.push(ROUTES.tourDetail.to + nextId);
         }
     }
 
-    const loadPage = (e) => {        
+    const loadPage = (e) => {  
+        // Here we check the next id when we are loading to see if there is a next 
+        // project avialable      
         let nextId = parseInt(id) + 1;
         if (projects[nextId] === undefined) {
             setEndOfTour(true);
@@ -47,7 +52,8 @@ const DetailPage = () => {
  
     return useObserver (() =>{
         if (projects[id] === undefined) {
-            return(history.push(ROUTES.tourDetail.to + 1))
+            // if the doesnt exist we push then back to an existing id;
+            return(history.push(ROUTES.tourDetail.to + 0))
          } else {
          return (
             <>

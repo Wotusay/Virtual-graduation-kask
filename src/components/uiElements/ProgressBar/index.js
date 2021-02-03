@@ -3,13 +3,12 @@ import React from 'react';
 import styles from './progressbar.module.css'
 
 const ProgresBar = ({project, multiplier}) => {
+    // Calculaltions for the progress bar so it can update when the id changes.
     const initialWidth = 1358;
     let multi = parseInt(multiplier) + 1;
     const length = project.length;
     let progressStep = initialWidth / length;
-    console.log(length)
     let progressWidth =  progressStep * multi  ; 
-    console.log(progressStep, multi, progressWidth );
     
     return useObserver (() => (
         <div className={styles.progress}>

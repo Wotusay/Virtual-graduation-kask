@@ -2,6 +2,7 @@ import { OrbitControls } from '@react-three/drei';
 import React from 'react'; 
 
 const ThreeBasicsItems = () => {
+    // The basic lighting and orbit controls for the project
     return (
         <>
         <ambientLight intensity={0.4} />

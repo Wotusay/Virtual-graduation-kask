@@ -26,14 +26,17 @@ class ProjectStore {
     }
 
     getProjectsWithTags = async tags => {
+        // Here we are getting all the projects with the clicked tag
         tags.forEach( async tag => {
             const projectsWithTag = await this.projectService.getAllProjectsWithTag(tag);
             if (projectsWithTag.length !== 0) {
+                // if its less then 0  we push it to the projects
                 projectsWithTag.forEach(async project => {
                     this.addProject(project);
                 });
             }
             else {
+                // if we found 0 he will give the following error
                 console.log(`there are ${projectsWithTag.length} found`);
                 return;
             }
@@ -41,6 +44,7 @@ class ProjectStore {
     }
     
     emptyProjects = () => {
+        // Here we empty all the projects
         if (this.projects.length !== 0) {
             return this.projects = []
         } else {
@@ -49,6 +53,7 @@ class ProjectStore {
     }
 
     emptyRandomProjects = () => {
+        // Here we empty all the random projects
         if (this.randomTourProjects.length !== 0) {
             return this.randomTourProjects = []
         } else {
@@ -57,6 +62,7 @@ class ProjectStore {
     }
 
     addRandomProjects = project => {
+        // Here we add all the random projects
         let projectExist = this.randomTourProjects.findIndex(item => item.id === project.id);
         if(projectExist === -1) {
             this.randomTourProjects.push(project);
@@ -67,7 +73,10 @@ class ProjectStore {
 
 
     getRandom = (arr, n) => {
+        // Here we select a random project out of the existing project array
         if (n >= 4) {
+            // if the array lenght is more than 4 we  set it back to 4 
+            // This is because it does not take alot of time to go trough the projects 
             n = 4;
         };
         
@@ -75,8 +84,11 @@ class ProjectStore {
         len = arr.length,
         taken = new Array(len);
         if (n > len)
+            // if we picked more array elements then we actualy have we display this error  
             throw new RangeError("getRandom: more elements taken than available");
         while (n--) {
+            // Here we pick a random array element then push it in the result to then add it 
+            // in our randmtourprojects array
             let x = Math.floor(Math.random() * len);
             result[n] = arr[x in taken ? taken[x] : x];
             taken[x] = --len in taken ? taken[len] : len;

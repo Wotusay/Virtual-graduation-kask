@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './likebutttons.module.css';
 
 const LikeButtons = () => {
+    // Like Buttons for the randomTour
+
     return useObserver(() => (
         <div className={styles.liking}>
         <p className={styles.textLiked}>How u feel about it</p>

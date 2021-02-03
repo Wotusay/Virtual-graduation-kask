@@ -4,6 +4,7 @@ import Rotate from '../Rotate';
 import HoverItem from '../HoverItem';
 
 const LandingUI = ({hoverItem}) => {
+    // landing UI
     return (
         <>     
             <h2 className={styles.titleFirst}>The Virtual <span className={styles.graduation}>Graduation</span> </h2>

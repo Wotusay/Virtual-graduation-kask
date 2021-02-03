@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../../consts";
 
 const Nav = () => {
+  // Layout and style of slide in menu 
+  // Slide in menu is from a package.
     const button = {
         bmBurgerButton: {
           position: 'absolute',

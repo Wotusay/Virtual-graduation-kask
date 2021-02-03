@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './picturelist.module.css'
 
 const PictureList = ({project}) => {
+    // List of the images
     return useObserver (() => (
         <>
         <div className={styles.images} >

@@ -3,6 +3,9 @@ import React from 'react';
 import styles from './description.module.css';
 
 const Description = ({project,visable}) => {
+    // Desription and general info about the project
+    // this  hidden but is visable with an onclick of a the yellow button
+
     return useObserver(() => (
         <div className={visable ? styles.info__wrapper : styles.hide} >            
         <article className={styles.info}> 

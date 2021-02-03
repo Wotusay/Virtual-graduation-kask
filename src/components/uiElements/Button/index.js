@@ -9,6 +9,8 @@ const Button = ({text, pathDefiner}) => {
         history.push(pathDefiner);
     }
 
+    // Button component
+
     return (
         <>
             <div className={styles.button__wrapper}>
