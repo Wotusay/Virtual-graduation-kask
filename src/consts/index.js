@@ -8,7 +8,7 @@ const ROUTES = {
 const LABELS = [
     'Animation',
     'Music','Film',
-    'Interieur','Fotografie',
+    'Interior','Photography',
     'Virtual reality',
     'Storytelling'
 ];

@@ -62,7 +62,7 @@ const TourPage = () => {
 
     return useObserver (() => (
         <>
-            <h2 className={styles.titleBegin}>What interest you the <span className={styles.begin}>Most</span> ?</h2>
+            <h2 className={styles.titleBegin}>What interests you <span className={styles.begin}>Most</span> ?</h2>
             <form onSubmit={handleSubmit}>
             <div className={styles.input__wrapper}> 
                 {LABELS.map(label => (

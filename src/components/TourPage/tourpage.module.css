@@ -25,13 +25,12 @@
 .discover {
     background-color: #37AD5D;
     color: white;
-    text-transform: lowercase;
     border-radius: 2rem;
     padding: 1.7rem;
     padding-left: 9.4rem ;
     padding-right:9.4rem ;
     border: none;
-
+    cursor: pointer;
     font-family: 'Mier A';
     font-weight: 800;
     font-size: 3rem;
@@ -54,7 +53,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3rem;
     top: 28rem;
-    left: 28%;
+    left: 26%;
 }
 
 .input {
@@ -62,6 +61,7 @@
 }
 
 .input__label {
+    cursor: pointer;
     background-color: white;
     color: #211F1F;
     font-size: 3rem;
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
     border-radius: 2.5rem;
-    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 .input:checked + .input__label {

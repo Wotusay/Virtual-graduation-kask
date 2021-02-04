@@ -33,7 +33,13 @@ const LandingPage = () => {
     const hoverItemOneIn = (e) => {
         // Here we get the hover input from the first item
         setHoverOne(true)
-        setHoverdItem('The Tour 2021');
+        if (clickOne) {
+            setHoverdItem('Click to close');
+
+        } else {
+            setHoverdItem('The Tour 2021');
+        }
+
     };
 
     const hoverItemOneOut = (e) => {
@@ -44,8 +50,12 @@ const LandingPage = () => {
 
     const hoverItemTwoIn = (e) => {
         // Here we get the hover input from the first item
-        setHoverTwo(true)
-        setHoverdItem('Your favourites');
+        setHoverTwo(true);
+        if (clickTwo) {
+            setHoverdItem('Click to close');
+        } else {
+            setHoverdItem('Your favourites');
+        }
 
     };
 
@@ -84,8 +94,8 @@ const LandingPage = () => {
     return  ( 
         <>
 
-        {clickOne ? <Tour></Tour> : 
-        clickTwo ? <Favourite></Favourite> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
+        {clickOne ? <Tour hoverItem={hoverItem}></Tour> : 
+        clickTwo ? <Favourite hoverItem={hoverItem} ></Favourite> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
 
         <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
             <ThreeBasicsItems></ThreeBasicsItems>
@@ -94,7 +104,7 @@ const LandingPage = () => {
                  </Html>}>
 
 
-                <animated.group position={[0.5,0,1.6]}>
+                <animated.group  position={[0.5,0,1.6]}>
 
                 <animated.group scale={scaleAnimationOne.scale} position={scaleAnimationOne.position} >
                 <IslandOne onPointerDown={(e) => handleClickOne(e) } onPointerOver={(e) => hoverItemOneIn(e)}

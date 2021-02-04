@@ -7,7 +7,7 @@ const LikeButtons = () => {
 
     return useObserver(() => (
         <div className={styles.liking}>
-        <p className={styles.textLiked}>How u feel about it</p>
+        <p className={styles.textLiked}>how do you feel about it</p>
         <div className={styles.liked__wrapperr}>
 
             <input className={styles.disliked} name="like" id="disliked" value={false} type="radio" ></input>
