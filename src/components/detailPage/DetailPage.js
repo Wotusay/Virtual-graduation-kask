@@ -16,6 +16,7 @@ const DetailPage = () => {
     const history = useHistory();
     const projects = projectStore.randomTourProjects;
     const {id} = useParams();
+    const [unCheckAll, setUnCheckAll] = useState(false);
 
     const hideDescription = () => {
         // To  hide the description
@@ -27,6 +28,7 @@ const DetailPage = () => {
 
 
     const nextProject = (e) => {
+        setUnCheckAll(true);
         let nextId = parseInt(id) + 1;
 
         if (endOfTour) {
@@ -40,7 +42,8 @@ const DetailPage = () => {
         }
     }
 
-    const loadPage = (e) => {  
+    const loadPage = (e) => {
+        setUnCheckAll(false);
         // Here we check the next id when we are loading to see if there is a next 
         // project avialable      
         let nextId = parseInt(id) + 1;
@@ -63,13 +66,14 @@ const DetailPage = () => {
                  <h2 id='title' className={styles.title}>{projects[id].name}</h2>
      
                  <PictureList project={projects[id]} ></PictureList>
-                 <LikeButtons project={projects[id]}></LikeButtons>
+    
+
+                 <LikeButtons unCheckAll={unCheckAll} project={projects[id]}></LikeButtons>
      
                  <div className={styles.buttons}>
                      <button onClick={(e) => hideDescription(e)} className={styles.buttonYellow}>Who made it?</button>
                      <button onClick={(e) => nextProject(e)} className={styles.buttonGreen}>{ endOfTour ? 'Go to your Favourites' : 'Next work'}</button>
-                 </div>
-     
+                 </div>                 
                  <Description project={projects[id]} visable={descriptionVisable} ></Description>
                  <ProgresBar project={projects} multiplier={id} ></ProgresBar>
                  </div>

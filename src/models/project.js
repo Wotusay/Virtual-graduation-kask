@@ -20,7 +20,8 @@ class Project {
 }
 
 decorate(Project, {
-    likes: observable
+    likes: observable,
+    liked: observable
 })
 
 // Data that comes form the firestore needs to be converterd to the 

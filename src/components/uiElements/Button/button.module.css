@@ -21,3 +21,36 @@
     margin-left: 42.5%;
     justify-content: center;
 }
+
+
+@media only screen and (min-width: 425px) {
+
+    .button__wrapper{
+        margin-left: 15.5%;    
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .button__wrapper{
+        margin-left: 32.5%;    
+    }
+    
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .button__wrapper{
+        margin-left: 35.5%;    
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+    .button__wrapper{
+        margin-left: 42.5%;    
+    }
+
+
+}

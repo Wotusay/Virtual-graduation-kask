@@ -11,6 +11,8 @@ import Tour from '../uiElements/TourUI/tour'
 import LandingUI from '../uiElements/LandingUI/index.js';
 import ThreeBasicsItems from '../uiElements/ThreeBasicsItems/index.js';
 import Favourite from '../uiElements/FavouritesUI/index.js';
+import {useMediaQuery} from "react-responsive";
+import { MEDIAQUERIES } from '../../consts/index.js';
 
  
 const LandingPage = () => {
@@ -18,6 +20,10 @@ const LandingPage = () => {
     const [hoverTwo, setHoverTwo ] = useState(false);
     const [clickOne, setClickOne] = useState(false);
     const [clickTwo, setClickTwo] = useState(false);
+
+    const smallScreen = useMediaQuery({minWidth:MEDIAQUERIES.mobile ,maxWidth: MEDIAQUERIES.tablet});
+    const normalScreen =  useMediaQuery({minWidth:MEDIAQUERIES.labtop ,maxWidth:MEDIAQUERIES.desktop});
+
     const [hoverItem, setHoverdItem] = useState('');
     const scaleAnimationOne = useSpring({
         // Scale animation for the islands 

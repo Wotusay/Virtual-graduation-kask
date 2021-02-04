@@ -43,6 +43,11 @@ class ProjectService{
         //  Then we send back the  data we collected
         return data;
       }
+
+      setLiked = async (id, likes) => {
+          await this.db.collection("projects").doc(id)
+          .update({'likes': likes});
+      }
 }
 
 export default ProjectService;

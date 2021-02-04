@@ -1,7 +1,12 @@
 import React from 'react';
-import styles from './rotate.module.css'
+import { MEDIAQUERIES } from '../../../consts';
+import styles from './rotate.module.css';
+import {useMediaQuery} from "react-responsive";
 
 const Rotate = () => {
+    
+    const smallScreen = useMediaQuery({minWidth:MEDIAQUERIES.mobile ,maxWidth: MEDIAQUERIES.tablet});
+    const normalScreen = useMediaQuery({minWidth:MEDIAQUERIES.labtop ,maxWidth:MEDIAQUERIES.desktop});
     // Indication on how to rotate the item
     return ( 
     <div className={styles.rotate__wrapper}>
@@ -20,7 +25,7 @@ const Rotate = () => {
         <circle r="11.3572" transform="matrix(-1 0 0 1 253.342 38.5092)" fill="#F6C545"/>
         <circle cx="170.222" cy="41.8068" r="26.0486" fill="white"/>
     </svg> 
-    <p className={styles.rotateInfo}>Click to rotate</p>
+    <p className={styles.rotateInfo}>{normalScreen ? 'Click to rotate' : smallScreen ? 'Drag to rotate' : 'Click to rotate' }</p>
     </div>
     )
 }

@@ -7,13 +7,27 @@ class ProjectStore {
         this.projectService = new ProjectService(this.rootStore.firebase);
         this.projects = [];
         this.randomTourProjects = [];
+        this.projectLiked = [];
     }
 
-    getProjects = async () => {
-        // Getting all the projects form the database that are needed
-        const project = await this.projectService.getProject("LiHhRZqvmIooMVsjsqNP");
-        this.addProject(project);
+    getLikedProjects = async (id) => {
+       // to get all the liked projects
+        console.log(id)
+        let project = await this.projectService.getProject(id);
+        console.log(project)
+        this.addToLikedProjects(project);
       };
+
+
+    addToLikedProjects = projectLiked => {
+        let projectLikedExist = this.projectLiked.findIndex(item => item.id === projectLiked.id);
+        if (projectLikedExist === -1) {
+            this.projectLiked.push(projectLiked);
+        } else {
+            return;
+        }
+
+    }
 
     addProject = project => { 
         // Setting the items in the store to acces them
@@ -107,6 +121,7 @@ class ProjectStore {
 decorate(ProjectStore, {
     projects: observable,
     randomTourProjects:observable,
+    projectLiked: observable,
     filterProjects: action,
     makeRandomProjectTour:action,
     getProjectsWithTags: action,

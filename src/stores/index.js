@@ -3,6 +3,7 @@ import StudentStore from './StudentStore';
 import UiStore from './UiStore';
 import * as firebase from "firebase/app";
 
+
 class RootStore {
 
     constructor() {
@@ -21,8 +22,10 @@ class RootStore {
         this.projectStore = new ProjectStore(this);
         this.uiStore = new UiStore(this);
         this.studentStore = new StudentStore(this);
+        
 
     }
+
 
 }
 

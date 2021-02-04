@@ -13,4 +13,11 @@ const LABELS = [
     'Storytelling'
 ];
 
-export {ROUTES,LABELS };
+const MEDIAQUERIES = {
+    mobile: 320,
+    tablet: 768,
+    labtop: 1440,
+    desktop: 1920,
+  };
+
+export {ROUTES,LABELS,MEDIAQUERIES };

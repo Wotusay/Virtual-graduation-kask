@@ -17,3 +17,45 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media only screen and (min-width: 425px) {
+
+    .rotate__wrapper {
+
+        left:25%;
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .rotate__wrapper {
+
+        left:35%;
+
+    }
+    
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .rotate__wrapper {
+
+        left:40%;
+
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .rotate__wrapper {
+
+        left:45%;
+        bottom: 10%;
+        z-index: 2;
+    }
+
+}

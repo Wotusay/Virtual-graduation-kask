@@ -24,6 +24,7 @@ const TourPage = () => {
             setSelection([...selection,inputValue]);
             // Getting all the projects with the tags
             projectStore.getProjectsWithTags(selection);
+            console.log(projectStore.projects.liked)
             return;
 
         }
@@ -78,6 +79,8 @@ const TourPage = () => {
             <input type="submit" value="Discover your tour" className={styles.discover}></input>
             </div>    
             </form>
+
+            <img className={styles.pictureInput} src="../assets/images/backggroundTour.png" alt="background"/>
         </>
     )) 
 

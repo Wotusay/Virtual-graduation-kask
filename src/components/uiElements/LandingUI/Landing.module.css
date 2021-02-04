@@ -20,3 +20,54 @@
     padding-left: 1rem;
     color: #F6C545;
 }
+@media only screen and (min-width: 425px) {
+
+    .titleFirst {
+        font-size: 2rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 42.2rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .titleFirst {
+        font-size: 3.5rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 75rem;
+    }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .titleFirst {
+        font-size: 4.5rem;
+        left: 7.5rem;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .titleFirst {
+        font-size: 4.5rem;
+        left: 42.5rem;
+        right: 43.5rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+}

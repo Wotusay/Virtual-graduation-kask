@@ -39,6 +39,7 @@
 }
 
 .button__wrapper{
+    z-index: 1;
     position: absolute;
     display: flex;
     bottom: 5rem;
@@ -47,6 +48,7 @@
 }
 
 .input__wrapper {
+    z-index: 1;
     position: absolute;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -76,4 +78,74 @@
 
 .input:checked + .input__label {
     background-color: #F6C545;
+}
+
+.pictureInput {
+
+    position: absolute;
+    z-index: 0;
+    top: 24rem;
+    left: 45rem;
+}
+
+
+@media only screen and (min-width: 425px) {
+
+    .titleBegin {
+        font-size: 1.8rem;
+
+        top: 15rem;
+        letter-spacing: 0.1em;
+    }
+    .begin {
+        padding-left: 0.8rem;
+        padding-right: 0rem;
+        color: #F6C545;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .titleBegin {
+        font-size: 3.0rem;
+
+        top: 15rem;
+        letter-spacing: 0.1em;
+    }
+
+    .begin {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .titleBegin {
+        font-size: 3.5rem;
+
+        top: 15rem;
+        letter-spacing: 0.1em;
+    }
+
+    .begin {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .titleBegin {
+        font-size: 4.5rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+    }
+
+    .begin {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
