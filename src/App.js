@@ -7,6 +7,7 @@ import LandingPage from "./components/landingpage/Landing.js";
 import TourPage from "./components/TourPage/TourPage";
 import DetailPage from "./components/detailPage/DetailPage";
 import { useStores } from "./hooks";
+import FavouritesPage from "./components/favouritesPage/FavouritesPage";
 
 
 
@@ -20,6 +21,10 @@ const App = () => {
      <Nav></Nav>
      <h1 className={'hidden'}> Graduation Expo - Kask </h1>
       <Switch>
+
+      <Route exact path={ROUTES.likes}>
+          <FavouritesPage></FavouritesPage>
+        </Route> 
         <Route exact path={ROUTES.tour}>
           <TourPage></TourPage>
         </Route>   

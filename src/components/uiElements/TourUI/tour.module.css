@@ -23,7 +23,7 @@
 
 
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 320px) {
 
     .titleTour {
         font-size: 2rem;
@@ -32,6 +32,12 @@
         top: 15rem;
         letter-spacing: 0.1em;
         width: 42.2rem;
+    }
+
+    .tour {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        color: #F6C545;
     }
 
 }
@@ -47,6 +53,11 @@
         width: 75rem;
     }
 
+    .tour {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        color: #F6C545;
+    }
 }
 
 

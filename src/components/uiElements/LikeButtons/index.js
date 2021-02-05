@@ -13,6 +13,11 @@ const LikeButtons = ({project,unCheckAll}) => {
         console.log(e.target.value);
         uiStore.addLikedProject(project);
         uiStore.setAllLikedProjectsToStorage();
+        const likes = project.likes; 
+        const id = project.id;
+        projectStore.addLikes(id,likes);
+        uiStore.findAllLikedProjects();
+        
         if (e.target.value === 'true') {
             setChechStateButtonOne(true) 
             if(chechStateButtonOne) {
@@ -42,7 +47,7 @@ const LikeButtons = ({project,unCheckAll}) => {
             setChechStateButtonOne(false);
             setChechStateButtonTwo(false); 
         } 
-    })
+    }, [unCheckAll]);
 
 
     return (

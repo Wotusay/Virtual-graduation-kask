@@ -1,18 +1,17 @@
 .titleFav{
-    position: absolute;
     display: flex;
     justify-content: center;
     z-index: 2;
     font-size: 4.5rem;
-    left: 45.5rem;
-    right: 45.5rem;
-    top: 15rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: white;
     font-family:'Monument Extended';
     font-style: normal;
     font-weight: normal;
+    margin-top: 20rem;
+    margin-left: 38rem;
+
 }
 
 .Fav {
@@ -22,13 +21,37 @@
 }
 
 
+.gridFav {
+    display: grid;
+    grid-template-columns: 36rem 36rem 36rem;
+    grid-gap: 10rem;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.underTitle {
+    text-decoration: none;
+    color: white;
+    font-family: 'Mier A';
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    width: 31rem;
+    text-transform: uppercase;
+}
+
+.container {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
 @media only screen and (min-width: 320px) {
 
     .titleFav {
         font-size: 2rem;
-        left: 3px;
-        right: 0rem;
-        top: 15rem;
+
         letter-spacing: 0.1em;
         width: 42.2rem;
     }
@@ -45,9 +68,7 @@
 
     .titleFav {
         font-size: 3.5rem;
-        left: 3px;
-        right: 0rem;
-        top: 15rem;
+
         letter-spacing: 0.1em;
         width: 75rem;
     }
@@ -65,9 +86,7 @@
 
     .titleFav {
         font-size: 4.5rem;
-        left: 7.5rem;
-        right: 0rem;
-        top: 15rem;
+
         letter-spacing: 0.1em;
         width: 90rem;
     }
@@ -83,9 +102,7 @@
 
     .titleFav {
         font-size: 4.5rem;
-        left: 42.5rem;
-        right: 43.5rem;
-        top: 15rem;
+
         letter-spacing: 0.1em;
         width: 90rem;
     }

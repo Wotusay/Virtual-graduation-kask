@@ -10,11 +10,17 @@ class ProjectStore {
         this.projectLiked = [];
     }
 
+    addLikes = async (id,likes) => { 
+        // Here we add a like into the firebase application
+        // And so we can prevent like spamming
+        let addedALike = likes + 1; 
+        await this.projectService.setLiked(id,addedALike);
+    }
+
     getLikedProjects = async (id) => {
        // to get all the liked projects
         console.log(id)
         let project = await this.projectService.getProject(id);
-        console.log(project)
         this.addToLikedProjects(project);
       };
 
@@ -26,7 +32,6 @@ class ProjectStore {
         } else {
             return;
         }
-
     }
 
     addProject = project => { 
@@ -127,6 +132,7 @@ decorate(ProjectStore, {
     getProjectsWithTags: action,
     emptyProjects:action,
     getRandom: action,
+    renewProject:action,
   });
 
 export default ProjectStore;

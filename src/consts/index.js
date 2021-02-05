@@ -1,6 +1,7 @@
 const ROUTES = {
     home: "/",
     tour:  "/tour/",
+    likes: "/likes/",
     likesDetail: { path: "/likes/:id", to: "/likes/" },
     tourDetail: { path:"/project/:id", to:"/project/"}
 }
