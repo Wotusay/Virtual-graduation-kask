@@ -15,6 +15,7 @@ const TourPage = () => {
     const [error,setError] = useState('');
 
     const smallScreen = useMediaQuery({maxWidth:500})
+    const medScreen = useMediaQuery({maxWidth:800})
 
 
     const checkBoxInput = async e => {
@@ -94,7 +95,7 @@ const TourPage = () => {
             </div>    
             </form>
 
-            <img width={smallScreen ? 400 : 1028 }  className={styles.pictureInput} src="../assets/images/backggroundTour.png" alt="background"/>
+            <img width={smallScreen ? 400 : medScreen ? 600 : 1028 }  className={styles.pictureInput} src="../assets/images/backggroundTour.png" alt="background"/>
         </>
     )) 
 

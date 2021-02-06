@@ -94,6 +94,7 @@
     color: tomato;
     font-size: 2.5rem;
     font-weight: bold;
+    z-index: 1;
     font-family: 'Mier A';
 }
 
@@ -133,7 +134,7 @@
 
     .pictureInput {
         position: absolute;
-        z-index: 0;
+        z-index: -1;
         top: 25rem;
         left: 2rem;
         overflow: hidden;
@@ -147,6 +148,10 @@
         font-weight: 800;
         font-size: 3rem;
         z-index: 2;
+    }
+
+    .error {
+        margin-top: 19rem;
     }
 }
 
@@ -186,7 +191,6 @@
 
     .pictureInput {
         position: absolute;
-        z-index: 0;
         top: 14rem;
         left: 2rem;
     }
@@ -199,6 +203,18 @@
         font-weight: 800;
         font-size: 3rem;
         z-index: 2;
+    }
+
+    .error {
+        display: flex;
+        margin-top: 22rem;
+        color: white;
+        justify-content: center;
+        color: tomato;
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: 'Mier A';
+        z-index: 4;
     }
 }
 
@@ -239,9 +255,9 @@
 
     .pictureInput {
         position: absolute;
-        z-index: 0;
-        top: 14rem;
-        left: 15rem;
+        z-index: -1;
+        top: 5rem;
+        left: -1rem;
     }
 
     .discover {
@@ -301,7 +317,7 @@
 
     .pictureInput {
         position: absolute;
-        z-index: 0;
+        z-index: -1;
         top: 24rem;
         left: 45rem;
     }
@@ -314,5 +330,18 @@
         font-weight: 800;
         font-size: 3rem;
         z-index: 2;
+    }
+
+    .error {
+        display: flex;
+        margin-top: 22rem;
+        color: white;
+        justify-content: center;
+        color: tomato;
+        font-size: 2.5rem;
+        font-weight: bold;
+        z-index: 1;
+
+        font-family: 'Mier A';
     }
 }
