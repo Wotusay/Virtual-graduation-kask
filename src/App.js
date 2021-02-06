@@ -5,7 +5,7 @@ import { ROUTES } from "./consts";
 import Nav from "./components/uiElements/nav/nav";
 import LandingPage from "./components/landingpage/Landing.js";
 import TourPage from "./components/TourPage/TourPage";
-import DetailPage from "./components/detailPage/DetailPage";
+import DetailPageTour from "./components/detailPageTour/DetailPageTour";
 import { useStores } from "./hooks";
 import FavouritesPage from "./components/favouritesPage/FavouritesPage";
 
@@ -29,7 +29,7 @@ const App = () => {
           <TourPage></TourPage>
         </Route>   
         <Route exact strict path={ROUTES.tourDetail.path}>
-            {projectStore.randomTourProjects.length === 0 ? (<Redirect to={ROUTES.tour} /> ) : <DetailPage></DetailPage> }
+            {projectStore.randomTourProjects.length === 0 ? (<Redirect to={ROUTES.tour} /> ) : <DetailPageTour></DetailPageTour> }
         </Route> 
         <Route  path={ROUTES.home}>
             <LandingPage></LandingPage>

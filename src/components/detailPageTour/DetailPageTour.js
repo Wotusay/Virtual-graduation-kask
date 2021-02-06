@@ -9,7 +9,7 @@ import PictureList from '../uiElements/PicturesList';
 import ProgresBar from '../uiElements/ProgressBar';
 import styles from './detailpage.module.css'
 
-const DetailPage = () => {
+const DetailPageTour = () => {
     const [descriptionVisable, setDesriptionVisble] = useState(false);
     const [endOfTour, setEndOfTour] = useState(false);
     const {projectStore} = useStores();
@@ -83,4 +83,4 @@ const DetailPage = () => {
         });
 }
 
-export default DetailPage;
+export default DetailPageTour;
