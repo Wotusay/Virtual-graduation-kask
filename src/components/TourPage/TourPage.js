@@ -4,6 +4,7 @@ import styles from './tourpage.module.css';
 import {useStores} from '../../hooks/index.js';
 import { useObserver } from 'mobx-react-lite';
 import { useHistory } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 
 const TourPage = () => {
@@ -12,6 +13,9 @@ const TourPage = () => {
     const { projectStore } =  useStores();
     const history = useHistory();
     const [error,setError] = useState('');
+
+    const smallScreen = useMediaQuery({maxWidth:500})
+
 
     const checkBoxInput = async e => {
         // Checking the input of the checkbuttons 
@@ -90,7 +94,7 @@ const TourPage = () => {
             </div>    
             </form>
 
-            <img className={styles.pictureInput} src="../assets/images/backggroundTour.png" alt="background"/>
+            <img width={smallScreen ? 400 : 1028 }  className={styles.pictureInput} src="../assets/images/backggroundTour.png" alt="background"/>
         </>
     )) 
 

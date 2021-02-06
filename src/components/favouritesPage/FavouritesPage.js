@@ -4,13 +4,17 @@ import { Link } from 'react-router-dom';
 import { ROUTES } from '../../consts';
 import { useStores } from '../../hooks';
 import styles from './favouritespage.module.css';
+import {useMediaQuery} from "react-responsive";
+import { MEDIAQUERIES } from '../../consts/index.js';
 
 const FavouritesPage = () => {
 
     const {projectStore} = useStores();
     const likedProject = projectStore.projectLiked;
 
-
+    const smallScreen = useMediaQuery({minWidth:MEDIAQUERIES.mobile ,maxWidth: MEDIAQUERIES.tablet});
+    const medScreen = useMediaQuery({minWidth:MEDIAQUERIES.tablet, maxWidth:MEDIAQUERIES.labtop})
+    const normalScreen =  useMediaQuery({minWidth:MEDIAQUERIES.labtop ,maxWidth:MEDIAQUERIES.desktop});
     return useObserver(() => (
         <>
         <div className={styles.container}>
@@ -33,7 +37,7 @@ const FavouritesPage = () => {
                     ))}
 
             </div> } 
-            <img className={styles.img} alt="background" src="../assets/images/islandFav.png" />
+            <img width={normalScreen ? 996 : medScreen ? 450 : smallScreen ? 0 : 996} className={styles.img} alt="background" src="../assets/images/islandFav.png" />
 
 
             </div>
