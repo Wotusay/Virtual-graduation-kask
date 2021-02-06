@@ -11,13 +11,23 @@
     font-weight: normal;
     margin-top: 20rem;
     margin-left: 40rem;
-
+    z-index: 2;
 }
 
 .Fav {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     color: #F6C545;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 30rem;
+    top: 30rem;
+    z-index: -1;
+
 }
 
 
@@ -28,6 +38,8 @@
     justify-content: center;
     margin-top: 5rem;
     margin-bottom: 5rem;
+    z-index: 2;
+
 }
 
 .underTitle {
@@ -39,6 +51,8 @@
     margin-top: 1.5rem;
     width: 31rem;
     text-transform: uppercase;
+    z-index: 2;
+
 }
 
 .container {
@@ -52,10 +66,12 @@
     font-size: 2rem;
     margin-top: 10rem;
     display: flex;
+    z-index: 2;
     justify-content: center;
 }
 
 .likeSome  {
+    z-index: 2;
     display: flex;
     justify-content: center;
     color:white;

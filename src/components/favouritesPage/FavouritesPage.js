@@ -33,6 +33,7 @@ const FavouritesPage = () => {
                     ))}
 
             </div> } 
+            <img className={styles.img} alt="background" src="../assets/images/islandFav.png" />
 
 
             </div>
