@@ -33,7 +33,7 @@ const DetailPage = () => {
 
         if (endOfTour) {
             // If the tour has endee we go back to the likes
-            history.push(ROUTES.tour);
+            history.push(ROUTES.likes);
             return;
         }
         else {

@@ -12,7 +12,7 @@ const Favourite = ({hoverItem}) => {
         <>
         <h2 className={styles.titleFav}>Your <span className={styles.Fav}>Favourites</span></h2>
         <HoverItem name={hoverItem}></HoverItem> 
-        <Button text={'Go in!'} pathDefiner={ROUTES.likesDetail}></Button>
+        <Button text={'Go in!'} pathDefiner={ROUTES.likes}></Button>
         </>
      )
 }

@@ -28,6 +28,7 @@ class UiStore {
             return;
         } else {
             itemsFormStorage.forEach(id => {
+                this.likedProjectsIds.push(id);
                 this.rootStore.projectStore.getLikedProjects(id);
             });
         }
