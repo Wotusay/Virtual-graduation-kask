@@ -60,6 +60,8 @@ const Nav = () => {
     return (
         <>
             <Menu customCrossIcon={<img alt='Close menu' src="../assets/images/svgs/closeMenu.svg" ></img>} styles={button} right>
+            <div className={styles.firstItem} >
+                <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.home}> <p className={styles.navText}> Home</p></Link></div>
                 <div className={styles.firstItem} >
                 <Link className={styles.menuItem} style={{ textDecoration: "none" }} to={ROUTES.tour}> <p className={styles.navText}> The Graduation Tour </p></Link></div>
                 <div >
