@@ -18,8 +18,6 @@ class ProjectStore {
     }
 
     getLikedProjects = async (id) => {
-       // to get all the liked projects
-        console.log(id)
         let project = await this.projectService.getProject(id);
         this.addToLikedProjects(project);
       };

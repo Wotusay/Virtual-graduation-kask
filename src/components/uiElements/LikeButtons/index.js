@@ -1,3 +1,4 @@
+import { useObserver } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
 import { useStores } from '../../../hooks';
 import styles from './likebutttons.module.css';
@@ -7,39 +8,28 @@ const LikeButtons = ({project,unCheckAll}) => {
     const {projectStore,uiStore} = useStores();
     const [chechStateButtonOne, setChechStateButtonOne] = useState(false);
     const [chechStateButtonTwo, setChechStateButtonTwo] = useState(false);
+    const projectLikedIds = uiStore.likedProjectsIds;
 
-    
     const setLiked =  e => {
-        console.log(e.target.value);
-        uiStore.addLikedProject(project);
-        uiStore.setAllLikedProjectsToStorage();
-        const likes = project.likes; 
-        const id = project.id;
-        projectStore.addLikes(id,likes);
-        uiStore.findAllLikedProjects();
-        
-        if (e.target.value === 'true') {
-            setChechStateButtonOne(true) 
-            if(chechStateButtonOne) {
-                if (chechStateButtonTwo)  {
-                    setChechStateButtonTwo(false);
-                }
-            }
-         } if (!e.target.value) {
-            setChechStateButtonTwo(true);
-            if (chechStateButtonOne) {
-                setChechStateButtonOne(false)
-            }
-         }
+        setChechStateButtonOne(true);
+        setChechStateButtonTwo(false);
     }
 
     const setUnLiked = e => {
-        if (e.target.value === 'false') {
             setChechStateButtonTwo(true);
-            if (chechStateButtonOne) {
-                setChechStateButtonOne(false)
-            }
-         }
+            setChechStateButtonOne(false);
+    }
+
+
+    const changedInput = e => {
+        const likes = project.likes; 
+        const id = project.id;
+        const target = e.target.value;
+        if (target === 'true') {
+            projectStore.addLikes(id,likes);
+            uiStore.addLikedProject(project);
+            uiStore.setAllLikedProjectsToStorage();
+        }
     }
 
     useEffect(() => {
@@ -47,24 +37,31 @@ const LikeButtons = ({project,unCheckAll}) => {
             setChechStateButtonOne(false);
             setChechStateButtonTwo(false); 
         } 
-    }, [unCheckAll]);
 
+        projectLikedIds.map(id => {
+            if (id === project.id) {
+             setChechStateButtonOne(true);
+            }
+            return id;
+        });
 
-    return (
+    }, [unCheckAll, projectLikedIds, project]);
+
+    return useObserver(() => (
         <div className={styles.liking}>
         <p className={styles.textLiked}>how do you feel about it</p>
         <div className={styles.liked__wrapperr}>
 
-            <input readOnly checked={unCheckAll ? false : chechStateButtonTwo ? true : false } onClick={(e) => setUnLiked(e)} className={styles.disliked} name={`like:${project.name}`} id={`disliked:${project.name}`} value={false} type="radio" ></input>
+            <input  checked={unCheckAll ? false : chechStateButtonTwo ? true : false } onClick={(e) => setUnLiked(e)} onInput={(e) => changedInput(e)} className={styles.disliked} name={`like:${project.name}`} id={`disliked:${project.name}`} value={false} type="radio" ></input>
             <label  className={styles.imgDisLiked} htmlFor={`disliked:${project.name}`}>
             </label>
 
-            <input readOnly  checked={unCheckAll ? false : chechStateButtonOne ? true : false } onClick={(e) => setLiked(e)} className={styles.liked}  name={`like:${project.name}`} id={`liked:${project.name}`} value={true} type="radio" ></input>
+            <input  checked={chechStateButtonOne ? true : unCheckAll ? false : false } onClick={(e) => setLiked(e)} className={styles.liked}  onInput={(e) => changedInput(e)}  name={`like:${project.name}`} id={`liked:${project.name}`} value={true} type="radio" ></input>
             <label className={styles.imgLiked} htmlFor={`liked:${project.name}`}> 
             </label>
         </div>
     </div>
-    )
+    ))
 }
 
 export default LikeButtons;
