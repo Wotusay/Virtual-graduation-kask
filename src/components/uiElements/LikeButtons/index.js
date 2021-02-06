@@ -27,8 +27,14 @@ const LikeButtons = ({project,unCheckAll}) => {
         const target = e.target.value;
         if (target === 'true') {
             projectStore.addLikes(id,likes);
-            uiStore.addLikedProject(project);
+            uiStore.addLikedProject(id);
             uiStore.setAllLikedProjectsToStorage();
+            uiStore.findAllLikedProjects();
+        }
+
+        if (target === 'false') {
+            uiStore.removeIdFromLikedProjects(id);
+
         }
     }
 

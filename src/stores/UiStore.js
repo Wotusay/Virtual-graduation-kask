@@ -8,10 +8,10 @@ class UiStore {
         this.likedProjectsIds = [];
     }
 
-    addLikedProject = project => {
-        let likedProjectExist = this.likedProjectsIds.findIndex(item => item === project.id);
+    addLikedProject = id => {
+        let likedProjectExist = this.likedProjectsIds.findIndex(item => item === id);
         if (likedProjectExist === -1) {
-            this.likedProjectsIds.push(project.id);
+            this.likedProjectsIds.push(id);
         } else {
             return;
         }
@@ -24,21 +24,35 @@ class UiStore {
 
     findAllLikedProjects = () => {
         const itemsFormStorage = JSON.parse(localStorage.getItem('likes'));
+        
         if (itemsFormStorage === null) {
             return;
         } else {
             itemsFormStorage.forEach(id => {
-                this.likedProjectsIds.push(id);
+                this.addLikedProject(id);
                 this.rootStore.projectStore.getLikedProjects(id);
             });
         }
     }
+
+    removeIdFromLikedProjects = (id) => {
+        this.likedProjectsIds.splice(this.likedProjectsIds.findIndex(item => item === id),1);
+        if( this.likedProjectsIds.length >= 0) {
+            const json = JSON.stringify(this.likedProjectsIds);
+            localStorage.setItem('likes', json);
+            this.rootStore.projectStore.removeLikedProjects(id);
+            this.findAllLikedProjects();
+        }
+    }
+
 }
 
 
 decorate(UiStore, {
     likedProjectsIds: observable,
-    setAllLikedProjectsToStorage: action
+    setAllLikedProjectsToStorage: action,
+    removeIdFromLikedProjects:action
+
 });
 
 

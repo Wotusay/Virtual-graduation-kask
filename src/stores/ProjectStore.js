@@ -22,6 +22,9 @@ class ProjectStore {
         this.addToLikedProjects(project);
       };
 
+    removeLikedProjects = (id) => {
+        this.projectLiked.splice(this.projectLiked.findIndex(item => item.id === id));
+    }
 
     addToLikedProjects = projectLiked => {
         let projectLikedExist = this.projectLiked.findIndex(item => item.id === projectLiked.id);
@@ -131,6 +134,7 @@ decorate(ProjectStore, {
     emptyProjects:action,
     getRandom: action,
     renewProject:action,
+    removeLikedProjects:action,
   });
 
 export default ProjectStore;
