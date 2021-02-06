@@ -6,15 +6,14 @@ import { useStores } from '../../hooks';
 import Description from '../uiElements/Description';
 import LikeButtons from '../uiElements/LikeButtons';
 import PictureList from '../uiElements/PicturesList';
-import ProgresBar from '../uiElements/ProgressBar';
 import styles from './detailpage.module.css'
 
-const DetailPageTour = () => {
+const DetailPageLikes = () => {
     const [descriptionVisable, setDesriptionVisble] = useState(false);
     const [endOfTour, setEndOfTour] = useState(false);
     const {projectStore} = useStores();
     const history = useHistory();
-    const projects = projectStore.randomTourProjects;
+    const projects = projectStore.projectLiked;
     const {id} = useParams();
     const [unCheckAll, setUnCheckAll] = useState(false);
 
@@ -33,12 +32,12 @@ const DetailPageTour = () => {
 
         if (endOfTour) {
             // If the tour has endee we go back to the likes
-            history.push(ROUTES.likes);
+            history.push(ROUTES.tour);
             return;
         }
         else {
             // When u click we parse the new id into the url 
-            history.push(ROUTES.tourDetail.to + nextId);
+            history.push(ROUTES.likesDetail.to + nextId);
         }
     }
 
@@ -49,14 +48,15 @@ const DetailPageTour = () => {
         let nextId = parseInt(id) + 1;
         if (projects[nextId] === undefined) {
             setEndOfTour(true);
-            return;
+            return null;
         }
     }
  
     return useObserver (() =>{
         if (projects[id] === undefined) {
+            history.push(ROUTES.likes)
             // if the doesnt exist we push then back to an existing id;
-            return history.push(ROUTES.tourDetail.to + 0)
+            return null;
          } else {
          return (
             <>
@@ -68,14 +68,13 @@ const DetailPageTour = () => {
                  <PictureList project={projects[id]} ></PictureList>
     
 
-                 <LikeButtons likesPage={false} unCheckAll={unCheckAll} project={projects[id]}></LikeButtons>
+                 <LikeButtons likesPage={true}  unCheckAll={unCheckAll} project={projects[id]}></LikeButtons>
      
                  <div className={styles.buttons}>
                      <button onClick={(e) => hideDescription(e)} className={styles.buttonYellow}>Who made it?</button>
-                     <button onClick={(e) => nextProject(e)} className={styles.buttonGreen}>{ endOfTour ? 'Go to your Favourites' : 'Next work'}</button>
+                     <button onClick={(e) => nextProject(e)} className={styles.buttonGreen}>{ endOfTour ? 'Explore more work' : 'Next Favourite'}</button>
                  </div>                 
                  <Description project={projects[id]} visable={descriptionVisable} ></Description>
-                 <ProgresBar project={projects} multiplier={id} ></ProgresBar>
                  </div>
              )
              </>
@@ -83,4 +82,4 @@ const DetailPageTour = () => {
         });
 }
 
-export default DetailPageTour;
+export default DetailPageLikes;

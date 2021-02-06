@@ -1,16 +1,19 @@
 import { useObserver } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { ROUTES } from '../../../consts';
 import { useStores } from '../../../hooks';
 import styles from './likebutttons.module.css';
 
-const LikeButtons = ({project,unCheckAll}) => {
+const LikeButtons = ({project,unCheckAll,likesPage}) => {
     // Like Buttons for the randomTour
     const {projectStore,uiStore} = useStores();
     const [chechStateButtonOne, setChechStateButtonOne] = useState(false);
     const [chechStateButtonTwo, setChechStateButtonTwo] = useState(false);
     const projectLikedIds = uiStore.likedProjectsIds;
+    const history = useHistory();
 
-    const setLiked =  e => {
+    const setLiked = e => {
         setChechStateButtonOne(true);
         setChechStateButtonTwo(false);
     }
@@ -34,7 +37,9 @@ const LikeButtons = ({project,unCheckAll}) => {
 
         if (target === 'false') {
             uiStore.removeIdFromLikedProjects(id);
-
+            if (likesPage) {
+                history.push(ROUTES.likes);
+            }
         }
     }
 

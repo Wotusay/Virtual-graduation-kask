@@ -8,6 +8,7 @@ import TourPage from "./components/TourPage/TourPage";
 import DetailPageTour from "./components/detailPageTour/DetailPageTour";
 import { useStores } from "./hooks";
 import FavouritesPage from "./components/favouritesPage/FavouritesPage";
+import DetailPageLikes from "./components/detailPageFavourites/detailPageLikes";
 
 
 
@@ -27,7 +28,10 @@ const App = () => {
         </Route> 
         <Route exact path={ROUTES.tour}>
           <TourPage></TourPage>
-        </Route>   
+        </Route>
+        <Route exact strict path={ROUTES.likesDetail.path}>
+            {projectStore.projectLiked.length === 0 ? (<Redirect to={ROUTES.likes} /> ) : <DetailPageLikes></DetailPageLikes> }
+        </Route>    
         <Route exact strict path={ROUTES.tourDetail.path}>
             {projectStore.randomTourProjects.length === 0 ? (<Redirect to={ROUTES.tour} /> ) : <DetailPageTour></DetailPageTour> }
         </Route> 

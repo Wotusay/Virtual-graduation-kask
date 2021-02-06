@@ -1,0 +1,56 @@
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Monument Extended';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4.5rem;
+    margin-top: 18rem;
+    margin-bottom: 5.6rem;
+}
+
+.container {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5.6rem;
+    margin-top:11rem;
+}
+
+.buttonYellow {
+    font-size: 3.5rem;
+    font-family:'Mier A';
+    font-weight: 800;
+
+    cursor: pointer;
+    background-color: #F6C545;
+    color: #211F1F;
+    border-radius: 2rem;
+    padding: 1.6rem;
+    padding-left: 3.7rem ;
+    padding-right:3.7rem ;
+    border: none;
+    margin-right: 48rem;
+
+}
+
+.buttonGreen {
+    font-size: 3.5rem;
+    font-family:'Mier A';
+    font-weight: 800;
+    cursor: pointer;
+    background-color: #37AD5D;
+    color: white;
+    border-radius: 2rem;
+    padding: 1.6rem;
+    padding-left: 3.7rem ;
+    padding-right:3.7rem ;
+    border: none;
+    margin-left: 48rem;
+}

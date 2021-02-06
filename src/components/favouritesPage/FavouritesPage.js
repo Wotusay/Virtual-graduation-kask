@@ -26,7 +26,7 @@ const FavouritesPage = () => {
             : 
             <div className={styles.gridFav}>
                     {likedProject.map(project => (
-                        <Link key={project.id} style={{textDecoration: 'none'}}>
+                        <Link to={ROUTES.likesDetail.to + likedProject.indexOf(project) } key={project.id} style={{textDecoration: 'none'}}>
                             <img key={project.id} alt={project.name} width="363.04" height="242" src={`../assets/images/${project.pictures[0]}`} />
                             <p key={project.name} className={styles.underTitle}>{project.name}</p>
                         </Link>
