@@ -56,7 +56,8 @@ const DetailPageTour = () => {
     return useObserver (() =>{
         if (projects[id] === undefined) {
             // if the doesnt exist we push then back to an existing id;
-            return history.push(ROUTES.tourDetail.to + 0)
+            history.push(ROUTES.tourDetail.to + 0)
+            return null;
          } else {
          return (
             <>
