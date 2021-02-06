@@ -11,6 +11,7 @@ const TourPage = () => {
     const [selection, setSelection] = useState([]);
     const { projectStore } =  useStores();
     const history = useHistory();
+    const [error,setError] = useState('');
 
     const checkBoxInput = async e => {
         // Checking the input of the checkbuttons 
@@ -24,7 +25,6 @@ const TourPage = () => {
             setSelection([...selection,inputValue]);
             // Getting all the projects with the tags
             projectStore.getProjectsWithTags(selection);
-            console.log(projectStore.projects.liked)
             return;
 
         }
@@ -46,7 +46,14 @@ const TourPage = () => {
         let projects = projectStore.projects;
         let n = selection.length;
 
-        if (selection.length !== 1) {
+
+        if(n <= 1) {
+            setError('Select more items!')
+         }
+
+        if (selection.length >= 2) {
+            setError('')
+
             // if the lenght is less then 1  the tour wont start
             try {
                 // Getting the random projects and pushing to the next page
@@ -54,16 +61,19 @@ const TourPage = () => {
                 history.push(ROUTES.tourDetail.to + 0);
             }
             catch(error) {
+                setError('Oops something went wrong try again')
                 // If there is an error he will  empty the selctions and u have to do it agian
                 projectStore.emptyProjects();
                 projectStore.emptyRandomProjects();
             }
          }
+
     }
 
     return useObserver (() => (
         <>
             <h2 className={styles.titleBegin}>What interests you <span className={styles.begin}>Most</span> ?</h2>
+            <p className={styles.error}>{error}</p>
             <form onSubmit={handleSubmit}>
             <div className={styles.input__wrapper}> 
                 {LABELS.map(label => (

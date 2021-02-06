@@ -1,6 +1,7 @@
 import { useObserver } from 'mobx-react-lite';
 import React from 'react';
 import styles from './description.module.css';
+import { v4 } from "uuid";
 
 const Description = ({project,visable}) => {
     // Desription and general info about the project
@@ -21,7 +22,7 @@ const Description = ({project,visable}) => {
                 {
                     project.description.map(line => (
                         <>
-                        <p className={styles.description}> 
+                        <p key={v4()} className={styles.description}> 
                             {line}
                         </p>
                         <br/>

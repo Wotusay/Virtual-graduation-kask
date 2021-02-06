@@ -88,6 +88,16 @@
     left: 45rem;
 }
 
+.error {
+    display: flex;
+    margin-top: 22rem;
+    color: white;
+    justify-content: center;
+    color: tomato;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Mier A';
+}
 
 @media only screen and (min-width: 320px) {
 
