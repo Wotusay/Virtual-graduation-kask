@@ -65,7 +65,7 @@ const LikeButtons = ({project,unCheckAll,likesPage}) => {
 
     return useObserver(() => (
         <div className={styles.liking}>
-        <p className={styles.textLiked}>how do you feel about it</p>
+        <p className={styles.textLiked}>Add it to your favourites</p>
         <div className={styles.liked__wrapperr}>
 
             <input  checked={unCheckAll ? false : chechStateButtonTwo ? true : false } onClick={(e) => setUnLiked(e)} onInput={(e) => changedInput(e)} className={styles.disliked} name={`like:${project.name}`} id={`disliked:${project.name}`} value={false} type="radio" ></input>
