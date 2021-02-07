@@ -45,7 +45,6 @@ class ProjectService{
       }
 
       setLiked = async (id, likes) => {
-          console.log(id,likes)
           await this.db.collection("projects").doc(id)
           .update({'likes': likes});
       }

@@ -57,3 +57,136 @@
 .disliked:checked + .imgDisLiked {
     background-image: url('/assets/images/svgs/dislikeClicked.svg');
 }
+
+@media only screen and (min-width: 410px) {
+    .liking {
+        margin-left: 3rem;
+        margin-bottom: 5.8rem;
+        margin-top: 5rem;
+    }
+    
+    .textLiked {
+        font-size: 1.8rem;
+        margin-left: 6.2rem;
+
+    }
+
+    .imgLiked {
+        width: 10rem;
+        height: 10rem;
+        margin-left: 10rem;
+
+    }
+    
+    
+    .liked__wrapperr {
+        margin-top: 2rem;
+        margin-left: 10rem;
+    }
+    
+    .imgDisLiked {
+        width: 10rem;
+        height: 10rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .liking {
+        margin-left: 8rem;
+        margin-bottom: 8.8rem;
+        margin-top: 0rem;
+
+    }
+    
+    .textLiked {
+        font-size: 2.4rem;
+        margin-left: 0rem;
+    }
+
+    .imgLiked {
+        width: 10rem;
+        height: 10rem;
+        margin-left: 8rem;
+
+    }
+    
+    
+    .liked__wrapperr {
+        margin-top: 2rem;
+    }
+    
+    .imgDisLiked {
+        width: 10rem;
+        height: 10rem;
+    }
+    
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .liking {
+        margin-left: 8rem;
+        margin-bottom: 8.8rem;
+        margin-top: 0rem;
+
+    }
+    
+    .textLiked {
+        font-size: 2.4rem;
+        margin-left: 0rem;
+
+    }
+
+    .imgLiked {
+        width: 10rem;
+        height: 10rem;
+        margin-left: 8rem;
+
+    }
+    
+    
+    .liked__wrapperr {
+        margin-top: 2rem;
+    }
+    
+    .imgDisLiked {
+        width: 10rem;
+        height: 10rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .liking {
+        margin-left: 8rem;
+        margin-bottom: 8.8rem;
+        margin-top: 0rem;
+
+    }
+    
+    .textLiked {
+        font-size: 2.4rem;
+        margin-left: 0rem;
+
+    }
+
+    .imgLiked {
+        width: 10rem;
+        height: 10rem;
+        margin-left: 8rem;
+
+    }
+    
+    
+    .liked__wrapperr {
+        margin-top: 2rem;
+    }
+    
+    .imgDisLiked {
+        width: 10rem;
+        height: 10rem;
+    }
+
+}

@@ -54,3 +54,158 @@
     border: none;
     margin-left: 48rem;
 }
+
+
+@media only screen and (min-width: 410px) {
+
+    .title {
+        font-size: 2rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        z-index: 5;
+        letter-spacing: 0.1em;
+        width: 41rem;
+    }
+
+    .buttonYellow {
+        font-size: 2rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 2.7rem ;
+        padding-right:2.7rem ;
+        margin-right: 2rem;
+    
+    }
+
+    .buttons {
+        margin-bottom: 5.6rem;
+        margin-top:11rem;
+    }
+    
+    .buttonGreen {
+        font-size: 2rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 2.7rem ;
+        padding-right:2.7rem ;
+        border: none;
+        margin-left: 2rem;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .title {
+        font-size: 3.5rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 75rem;
+    }
+
+    .buttonYellow {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        margin-right: 8rem;
+    
+    }
+
+    .buttons {
+        margin-bottom: 5.6rem;
+        margin-top:11rem;
+    }
+    
+    .buttonGreen {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        border: none;
+        margin-left: 8rem;
+    }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .title {
+        font-size: 4.5rem;
+        left: 7.5rem;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+
+    .buttonYellow {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        margin-right: 18rem;
+    
+    }
+
+    .buttons {
+        margin-bottom: 5.6rem;
+        margin-top:11rem;
+    }
+    
+    .buttonGreen {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        border: none;
+        margin-left: 18rem;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .title {
+        font-size: 4.5rem;
+        left: 42.5rem;
+        right: 43.5rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+
+
+    .buttons {
+        margin-bottom: 5.6rem;
+        margin-top:11rem;
+    }
+    
+    .buttonYellow {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        margin-right: 48rem;
+    
+    }
+    
+    .buttonGreen {
+        font-size: 3.5rem;
+        border-radius: 2rem;
+        padding: 1.6rem;
+        padding-left: 3.7rem ;
+        padding-right:3.7rem ;
+        border: none;
+        margin-left: 48rem;
+    }
+}
