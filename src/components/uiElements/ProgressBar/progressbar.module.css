@@ -1,4 +1,5 @@
 .progress {
+    margin-top: 5.6rem;
     margin-bottom: 5.6rem;
     display: grid;
     justify-content: center;
@@ -33,13 +34,26 @@
         margin-bottom: 1rem;
     }
 
+    .progress {
+        margin-top: 3.6rem;
+        margin-bottom: 5.6rem;
+        display: grid;
+        justify-content: center;
+    }
 }
+
 
 @media only screen and (min-width: 768px) {
 
     .progressText {
         font-size: 2.4rem;
         margin-bottom: 1rem;
+    }
+    .progress {
+        margin-top: 4.6rem;
+        margin-bottom: 5.6rem;
+        display: grid;
+        justify-content: center;
     }
 }
 
@@ -59,4 +73,10 @@
         margin-bottom: 1rem;
     }
 
+    .progress {
+        margin-top: 5.6rem;
+        margin-bottom: 5.6rem;
+        display: grid;
+        justify-content: center;
+    }
 }

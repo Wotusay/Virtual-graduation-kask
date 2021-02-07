@@ -8,6 +8,8 @@
     font-size: 4.5rem;
     margin-top: 18rem;
     margin-bottom: 5.6rem;
+    text-align: center;
+
 }
 
 .container {
@@ -65,7 +67,6 @@
         top: 15rem;
         z-index: 5;
         letter-spacing: 0.1em;
-        width: 41rem;
     }
 
     .buttonYellow {
@@ -84,13 +85,13 @@
     }
     
     .buttonGreen {
-        font-size: 2rem;
+        font-size: 1.8rem;
         border-radius: 2rem;
         padding: 1.6rem;
-        padding-left: 2.7rem ;
-        padding-right:2.7rem ;
+        padding-left: 1.7rem ;
+        padding-right:1.7rem ;
         border: none;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
 }
@@ -103,7 +104,6 @@
         right: 0rem;
         top: 15rem;
         letter-spacing: 0.1em;
-        width: 75rem;
     }
 
     .buttonYellow {
@@ -142,7 +142,6 @@
         right: 0rem;
         top: 15rem;
         letter-spacing: 0.1em;
-        width: 90rem;
     }
 
     .buttonYellow {
@@ -180,7 +179,6 @@
         right: 43.5rem;
         top: 15rem;
         letter-spacing: 0.1em;
-        width: 90rem;
     }
 
 

@@ -8,6 +8,7 @@
     font-size: 4.5rem;
     margin-top: 18rem;
     margin-bottom: 5.6rem;
+    text-align: center;
 }
 
 .container {
@@ -83,13 +84,13 @@
     }
     
     .buttonGreen {
-        font-size: 2rem;
+        font-size: 1.8rem;
         border-radius: 2rem;
         padding: 1.6rem;
-        padding-left: 2.7rem ;
-        padding-right:2.7rem ;
+        padding-left: 1.7rem ;
+        padding-right:1.7rem ;
         border: none;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
 }
