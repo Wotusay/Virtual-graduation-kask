@@ -14,6 +14,7 @@ const LikeButtons = ({project,unCheckAll,likesPage}) => {
     const history = useHistory();
 
     const setLiked = e => {
+        // Set the checked state
         setChechStateButtonOne(true);
         setChechStateButtonTwo(false);
     }
@@ -25,10 +26,12 @@ const LikeButtons = ({project,unCheckAll,likesPage}) => {
 
 
     const changedInput = e => {
+        // Here we check the input
         const likes = project.likes; 
         const id = project.id;
         const target = e.target.value;
         if (target === 'true') {
+            // We send the values to the stores to process them
             projectStore.addLikes(id,likes);
             uiStore.addLikedProject(id);
             uiStore.setAllLikedProjectsToStorage();
@@ -36,6 +39,7 @@ const LikeButtons = ({project,unCheckAll,likesPage}) => {
         }
 
         if (target === 'false') {
+            // Here we remove the id and push  go back if we are on likespage
             uiStore.removeIdFromLikedProjects(id);
             if (likesPage) {
                 history.push(ROUTES.likes);
@@ -50,6 +54,7 @@ const LikeButtons = ({project,unCheckAll,likesPage}) => {
         } 
 
         projectLikedIds.map(id => {
+            // Here we check if the id is in the uistore if it is then we set the state checked
             if (id === project.id) {
              setChechStateButtonOne(true);
             }

@@ -18,15 +18,18 @@ class ProjectStore {
     }
 
     getLikedProjects = async (id) => {
+        // Here we get all the liked project ids an set in the array
         let project = await this.projectService.getProject(id);
         this.addToLikedProjects(project);
       };
 
     removeLikedProjects = (id) => {
+        // Here we remove an item from the projectt list if the id is in the array
         this.projectLiked.splice(this.projectLiked.findIndex(item => item.id === id));
     }
 
     addToLikedProjects = projectLiked => {
+        // Here we add the liked prroject in the array
         let projectLikedExist = this.projectLiked.findIndex(item => item.id === projectLiked.id);
         if (projectLikedExist === -1) {
             this.projectLiked.push(projectLiked);
