@@ -78,7 +78,7 @@ const LandingPage = () => {
         if (clickFour) {
             setHoverdItem('Click to close');
         } else {
-            setHoverdItem('Institutions');
+            setHoverdItem('The Institutions');
         }
 
     };
