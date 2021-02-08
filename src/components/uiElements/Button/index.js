@@ -2,11 +2,17 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './button.module.css';
 
-const Button = ({text, pathDefiner}) => {
+const Button = ({text, pathDefiner, extern}) => {
     const history = useHistory();
 
     const clickEvent = e => {
-        history.push(pathDefiner);
+        
+        if (extern) {
+            window.location.href = pathDefiner;
+        } else {
+            history.push(pathDefiner);
+
+        }
     }
 
     // Button component

@@ -12,7 +12,7 @@ const Tour = ({hoverItem}) => {
         <>
         <h2 className={styles.titleTour}>The <span className={styles.tour}>Tour</span> 2021</h2>
         <HoverItem name={hoverItem}></HoverItem> 
-        <Button text={'Discover'} pathDefiner={ROUTES.tour}></Button>
+        <Button text={'Discover'} extern={false} pathDefiner={ROUTES.tour}></Button>
         </>
      )
 }
