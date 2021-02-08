@@ -11,7 +11,7 @@ import Tour from '../uiElements/TourUI/tour'
 import LandingUI from '../uiElements/LandingUI/index.js';
 import ThreeBasicsItems from '../uiElements/ThreeBasicsItems/index.js';
 import Favourite from '../uiElements/FavouritesUI/index.js';
-import Instictution from '../uiElements/InstitutionUI/index.js';
+import Instutions from '../uiElements/InstitutionUI/index.js';
 
 
  
@@ -128,7 +128,7 @@ const LandingPage = () => {
         <>
 
         {clickOne ? <Tour hoverItem={hoverItem}></Tour> : 
-        clickTwo ? <Favourite hoverItem={hoverItem} ></Favourite> : clickFour ? <Instictution hoverItem={hoverItem} ></Instictution> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
+        clickTwo ? <Favourite hoverItem={hoverItem} ></Favourite> : clickFour ? <Instutions hoverItem={hoverItem} ></Instutions> : <LandingUI hoverItem={hoverItem} ></LandingUI>}
 
         <Canvas id="test" shadowMap resize={{scroll:false}} style={{width: 'auto', zIndex:1}} camera={{position: [1,6.5,1], fov:100, near: 0.1, far: 20}}>
             <ThreeBasicsItems></ThreeBasicsItems>
