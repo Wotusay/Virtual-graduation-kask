@@ -118,7 +118,7 @@ const LandingPage = () => {
     };
     useEffect(() => {
         // To display the cursor as a pointer when hovering over an 3d object
-        document.body.style.cursor = hoverOne || hoverTwo ? 'pointer' : 'auto';
+        document.body.style.cursor = hoverOne || hoverTwo || hoverFour? 'pointer' : 'auto';
     })
     
     // Instead of using onclick i use onpointerdown
