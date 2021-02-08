@@ -1,0 +1,97 @@
+.titleFav{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    font-size: 4.5rem;
+    left: 45.5rem;
+    right: 45.5rem;
+    top: 15rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    font-family:'Monument Extended';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.Fav {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    color: #F6C545;
+}
+
+
+@media only screen and (min-width: 410px) {
+
+    .titleFav {
+        font-size: 2rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 42.2rem;
+    }
+
+    .Fav {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        color: #F6C545;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .titleFav {
+        font-size: 3.5rem;
+        left: 3px;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 75rem;
+    }
+
+    .Fav {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        color: #F6C545;
+    }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .titleFav {
+        font-size: 4.5rem;
+        left: 7.5rem;
+        right: 0rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+    .Fav {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        color: #F6C545;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .titleFav {
+        font-size: 4.5rem;
+        left: 42.5rem;
+        right: 43.5rem;
+        top: 15rem;
+        letter-spacing: 0.1em;
+        width: 90rem;
+    }
+    .Fav {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        color: #F6C545;
+    }
+}

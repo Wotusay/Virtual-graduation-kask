@@ -16,7 +16,7 @@ export default function Island(props) {
   })
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh castShadow receiveShadow material={materials['Material.001']} geometry={nodes.Cube004.geometry} />
+      <mesh receiveShadow material={materials['Material.001']} geometry={nodes.Cube004.geometry} />
       <mesh castShadow receiveShadow material={materials['Material.002']} geometry={nodes.Cube004_1.geometry} />
       <mesh castShadow receiveShadow 
         material={materials['Material.243']}
@@ -128,7 +128,7 @@ export default function Island(props) {
         rotation={[Math.PI, -1.43, Math.PI]}
         scale={[0.03, 0.18, 0.02]}
       />
-      <mesh castShadow receiveShadow
+      <mesh receiveShadow
         material={materials['Material.185']}
         geometry={nodes.Plane018.geometry}
         position={[-0.27, 0.24, 0.17]}
