@@ -1,7 +1,7 @@
 # KASK Virtual Graduation
 
 <p align="center">
-  <img src="./public/assets/images/LogoNav.png" alt="logo" width="400"/>
+  <img src="./public/assets/images/logoNav.png" alt="logo" width="400"/>
 </p>
 
 [🔗 Go Explore the project ](https://relaxed-babbage-d98010.netlify.app/)
