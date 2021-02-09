@@ -34,7 +34,7 @@ const Description = ({project,visable}) => {
 
     <div className={styles.links}>
         <a href={project.url} className={styles.link} >Check the work out</a>
-        <a href='www.google.be' className={styles.linkYellow} >Contact the student</a>
+        <a href={`mailto:wout.salembier@hotmail.com?subject=${project.name}`} className={styles.linkYellow} >Contact the student</a>
 
     </div>
 
